@@ -1,4 +1,4 @@
-// assets/js/script.js
+  // assets/js/script.js
 document.addEventListener('DOMContentLoaded', () => {
   updateYear();
   initCartButtons();
