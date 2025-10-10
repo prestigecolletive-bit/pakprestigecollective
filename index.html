@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Prestige Collective</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+   <!-- Header -->
+<header class="site-header">
+    
+    
+<script>
+  const cartItems = JSON.parse(localStorage.getItem("cart") || "[]");
+  document.getElementById("cartCount").innerText = cartItems.length;
+</script>
+  <div class="header-container">
+    <!-- Left: Logo + Brand -->
+    <div class="header-left">
+      <img src="images/logo.jpg" alt="Prestige Collective Logo" class="logo">
+      <h1 class="brand-name">Prestige Collective</h1>
+    </div>
+
+    <!-- Right: Cart -->
+    <div class="header-right">
+      <a href="cart.html" class="cart-link">
+        🛒 <span class="cart-text">Cart</span> 
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+<!-- Navigation Bar -->
+<nav class="sub-header">
+  <ul>
+    <li><a href="watches.html">Watches</a></li>
+    <li><a href="fragrances.html">Fragrances</a></li>
+    <li><a href="bracelets.html">Custom Bracelets</a></li>
+  </ul>
+</nav>
+ 
+ 
+
+</script>
+<main class="container">
+  <h2>All Products Collection</h2>
+
+  <div class="grid">
+    <!-- Product 1 -->
+   <div class="card product">
+  <img src="images/watch.jpg" alt="Prestige Silver Watch">
+  <h3>Prestige Silver Watch</h3>
+  <p class="small">Watches — Elegant silver stainless steel, water resistant.</p>
+  <div class="row">
+    <div class="price">Rs. 12,999</div>
+    <button class="btn add-to-cart" data-id="1" data-name="Prestige Silver Watch" data-price="12999">Add to Cart</button>
+  </div>
+</div>
+
+    <!-- Product 2 -->
+    <div class="card product">
+  <img src="images/bracelet.jpg" alt="Luxe Bracelet">
+  <h3>Luxe Bracelet</h3>
+  <p class="small">Bracelet — Hand-finished premium bracelet.</p>
+  <div class="row">
+    <div class="price">Rs. 4,950</div>
+    <button class="btn add-to-cart" data-id="2" data-name="Luxe Bracelet" data-price="4950">Add to Cart</button>
+  </div>
+</div>
+
+    <!-- Product 3 -->
+    <div class="card product">
+  <img src="images/perfume.jpg" alt="Aurum Perfume">
+  <h3>Aurum Perfume</h3>
+  <p class="small">Perfume — Signature long-lasting refined notes.</p>
+  <div class="row">
+    <div class="price">Rs. 7,900</div>
+    <button class="btn add-to-cart" data-id="3" data-name="Aurum Perfume" data-price="7900">Add to Cart</button>
+  </div>
+</div>
+</main>
+ 
+
+  <!-- Footer -->
+<footer class="site-footer">
+
+  <!-- 3 Columns -->
+  <div class="footer-columns">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h4>Shop Prestige</h4>
+      <ul>
+        <li><a href="#">Shop All</a></li>
+        <li><a href="#">Watches</a></li>
+        <li><a href="#">Perfumes</a></li>
+        <li><a href="#">Custom Bracelets</a></li>
+        <li><a href="#">Gift Sets</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Returns & Exchange Policy</a></li>
+        <li><a href="#">Warranty Information</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Modes of Payment</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <ul>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Store Locator</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Social Links -->
+  <div class="social-links">
+    <a href="https://facebook.com/YourPage" target="_blank">
+      <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 5.004 3.657 9.128 8.438 9.877v-6.987h-2.54V12h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.463h-1.261c-1.243 0-1.631.771-1.631 1.562V12h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 17.004 22 12z"/>
+      </svg>
+    </a>
+
+    <a href="https://instagram.com/YourPage" target="_blank">
+      <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm4.5-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+      </svg>
+    </a>
+
+    <a href="https://twitter.com/YourPage" target="_blank">
+      <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M24 4.557a9.94 9.94 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.864 9.864 0 01-3.127 1.196 4.917 4.917 0 00-8.384 4.482A13.94 13.94 0 011.671 3.149a4.917 4.917 0 001.523 6.573A4.902 4.902 0 01.964 9.1v.062a4.916 4.916 0 003.946 4.817 4.902 4.902 0 01-2.212.084 4.918 4.918 0 004.588 3.417A9.867 9.867 0 010 19.54a13.94 13.94 0 007.548 2.212c9.056 0 14.01-7.503 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0024 4.557z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Bottom text -->
+  <p class="footer-bottom">© <span id="year"></span> Prestige Collective • Silver & White Collection</p>
+</footer>
+
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

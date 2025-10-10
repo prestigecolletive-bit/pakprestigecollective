@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragrances Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Fragrances Collection</h1>
+  </header>
+
+  <!-- Subcategory Buttons -->
+  <div class="subcategory-bar">
+    <button onclick="showProducts('men')">Men</button>
+    <button onclick="showProducts('ladies')">Ladies</button>
+  </div>
+
+  <!-- Products -->
+  <div class="product-sections">
+
+    <!-- Men's Perfumes -->
+    <div id="men" class="product-category">
+      <h2>Men's Perfumes</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/men-perfume1.jpg" alt="Perfume 1">
+          <p>Oud Royal</p>
+          <p>$95</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/men-perfume2.jpg" alt="Perfume 2">
+          <p>Fresh Aqua</p>
+          <p>$85</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ladies' Perfumes -->
+    <div id="ladies" class="product-category" style="display:none;">
+      <h2>Ladies' Perfumes</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/ladies-perfume1.jpg" alt="Perfume 1">
+          <p>Floral Mist</p>
+          <p>$80</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/ladies-perfume2.jpg" alt="Perfume 2">
+          <p>Velvet Rose</p>
+          <p>$90</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Toggle Script -->
+  <script>
+    function showProducts(category) {
+      document.querySelectorAll('.product-category').forEach(el => el.style.display = 'none');
+      document.getElementById(category).style.display = 'block';
+    }
+  </script>
+  <script src="assets/js/cart.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Product Detail - Prestige Collective</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><img src="assets/images/logo.png" alt=""><h1>Prestige Collective</h1></div>
+    <div class="header-right"><a href="cart.html" class="small">Cart <span class="cart-count">0</span></a></div>
+  </header>
+
+  <main class="container">
+    <div class="card product-detail">
+      <div class="detail-grid">
+        <div>
+          <img id="prod-img" src="assets/images/product1.jpg" alt="" style="width:100%;border-radius:8px">
+        </div>
+        <div>
+          <h2 id="prod-name">Prestige Silver Watch</h2>
+          <p class="small" id="prod-category">Watches</p>
+          <p id="prod-desc">Elegant silver stainless steel watch with water resistance. Perfect for daily wear and formal events.</p>
+          <div class="price" id="prod-price">$129.99</div>
+
+          <form id="addForm" style="margin-top:12px">
+            <label>Qty:
+              <input type="number" id="qty" value="1" min="1" style="width:70px;padding:6px;margin-left:8px">
+            </label>
+            <button class="btn" id="addBtn" style="margin-left:10px">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px"><a href="index.html" class="btn secondary">← Back to Shop</a></div>
+    <div class="grid">
+  <div class="card product">
+    <img src="images/watch.jpg" alt="Prestige Silver Watch">
+    <h3>Prestige Silver Watch</h3>
+    <p class="small">Watches — Elegant silver stainless steel, water resistant.</p>
+    <div class="row">
+      <div class="price">Rs. 12,999</div>
+      <button class="btn add-to-cart"
+              data-id="1"
+              data-name="Prestige Silver Watch"
+              data-price="12999">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Bracelet -->
+  <div class="card product">
+    <img src="images/bracelet.jpg" alt="Luxe Bracelet">
+    <h3>Luxe Bracelet</h3>
+    <p class="small">Bracelet — Hand-finished premium bracelet.</p>
+    <div class="row">
+      <div class="price">Rs. 4,950</div>
+      <button class="btn add-to-cart"
+              data-id="2"
+              data-name="Luxe Bracelet"
+              data-price="4950">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Perfume -->
+  <div class="card product">
+    <img src="images/perfume.jpg" alt="Aurum Perfume">
+    <h3>Aurum Perfume</h3>
+    <p class="small">Perfume — Signature long-lasting refined notes.</p>
+    <div class="row">
+      <div class="price">Rs. 7,900</div>
+      <button class="btn add-to-cart"
+              data-id="3"
+              data-name="Aurum Perfume"
+              data-price="7900">Add to Cart</button>
+    </div>
+  </div>
+</div>
+  </main>
+
+  <script src="assets/js/script.js"></script>
+  <script>
+    // simple static logic to populate from query param (for demo)
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id') || '1';
+    // we could map objects here if desired; for demo, keep default data
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="assets/js/cart.js" defer></script>
+</body>
+</html>

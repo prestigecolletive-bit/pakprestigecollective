@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Watches Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Watches Collection</h1>
+  </header>
+
+  <!-- Subcategory Buttons -->
+  <div class="subcategory-bar">
+    <button onclick="showProducts('men')">Men</button>
+    <button onclick="showProducts('ladies')">Ladies</button>
+  </div>
+
+  <!-- Products -->
+  <div class="product-sections">
+    
+    <!-- Men Watches -->
+    <div id="men" class="product-category">
+      <h2>Men's Watches</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/men-watch1.jpg" alt="Watch 1">
+          <p>Classic Black Watch</p>
+          <p>$120</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/men-watch2.jpg" alt="Watch 2">
+          <p>Luxury Silver Watch</p>
+          <p>$180</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ladies Watches -->
+    <div id="ladies" class="product-category" style="display:none;">
+      <h2>Ladies' Watches</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/ladies-watch1.jpg" alt="Watch 1">
+          <p>Rose Gold Watch</p>
+          <p>$150</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/ladies-watch2.jpg" alt="Watch 2">
+          <p>Elegant White Strap</p>
+          <p>$130</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+function showProducts(category) {
+  document.querySelectorAll('.product-category').forEach(el => el.style.display = 'none');
+  document.getElementById(category).style.display = 'block';
+}
+</script>
+<script src="assets/js/cart.js" defer></script>
+
+</body>
+</html>

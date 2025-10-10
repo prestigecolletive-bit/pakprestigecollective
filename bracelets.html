@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Bracelets Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Prestige Collective – Custom Bracelets</h1>
+  </header>
+
+  <!-- Subcategory Buttons -->
+  <div class="subcategory-bar">
+    <button onclick="showCategory('men')">Men</button>
+    <button onclick="showCategory('ladies')">Ladies</button>
+  </div>
+
+  <!-- Product Sections -->
+  <div class="product-sections">
+    
+    <!-- Men Bracelets -->
+    <div class="product-category" id="men">
+      <h2>Men’s Bracelets</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/men-bracelet1.jpg" alt="Men Bracelet">
+          <p>Black Leather Bracelet</p>
+          <p>Rs. 1500</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/men-bracelet2.jpg" alt="Men Bracelet">
+          <p>Steel Chain Bracelet</p>
+          <p>Rs. 2200</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ladies Bracelets -->
+    <div class="product-category" id="ladies" style="display:none;">
+      <h2>Ladies’ Bracelets</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/ladies-bracelet1.jpg" alt="Ladies Bracelet">
+          <p>Rose Gold Charm Bracelet</p>
+          <p>Rs. 1800</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/ladies-bracelet2.jpg" alt="Ladies Bracelet">
+          <p>Crystal Beaded Bracelet</p>
+          <p>Rs. 2000</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Toggle Men / Ladies sections
+    function showCategory(category) {
+      document.getElementById("men").style.display = "none";
+      document.getElementById("ladies").style.display = "none";
+      document.getElementById(category).style.display = "block";
+    }
+  </script>
+  <script src="assets/js/cart.js" defer></script>
+
+</body>
+</html>
