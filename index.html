@@ -177,9 +177,28 @@
         alt="WhatsApp" 
         class="whatsapp-icon">
 </a>
+  <!-- Popup Message -->
+<div id="popup-message" class="popup">
+  Free & Fast Delivery All Over Pakistan 🇵🇰
+</div>
+<script>
+  window.addEventListener('load', function() {
+    const popup = document.getElementById('popup-message');
+
+    // Slide in
+    popup.style.right = '20px';
+
+    // Hide after 3 seconds
+    setTimeout(() => {
+      popup.style.right = '-350px';
+    }, 3000);
+  });
+</script>
+
 
 </body>
 </html>
+
 
 
 
