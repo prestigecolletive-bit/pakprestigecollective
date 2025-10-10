@@ -10,23 +10,7 @@
   <header class="header">
     <div class="logo"><img src="assets/images/logo.png" alt=""><h1>Prestige Collective</h1></div>
     <div class="header-right"><a href="index.html" class="small">Continue Shopping</a></div>
-   <a href="cart.html" class="cart-link">
-        🛒 <span class="cart-text"> Cart</span> 
-        <span class="cart-count">0</span>
-      </a>
-
-<script>
-  const cartItems = JSON.parse(localStorage.getItem("cart") || "[]");
-  let cartHtml = "<ul>";
-  cartItems.forEach(item => {
-    cartHtml += `<li>${item.name} - PKR ${item.price}</li>`;
-  });
-  cartHtml += "</ul>";
-  document.getElementById("cartCount").innerText = cartItems.length;
-</script>
-
   </header>
-  
 
   <main class="container">
     <h2>Your Cart</h2>
@@ -40,32 +24,5 @@
   </main>
 
   <script src="assets/js/script.js"></script>
-  <main class="container">
-    <h2>Checkout</h2>
-    <div class="card">
-      <p id="orderSummary">Order total: PKR 0</p>
-      <form id="checkoutForm" method="POST" action="process_order.php">
-        <div class="form-row">
-          <input class="input" name="customer_name" placeholder="Full Name" required>
-          <input class="input" name="contact_no" placeholder="Contact Number" required>
-        </div>
-        <div class="form-row">
-          <input class="input" name="address" placeholder="Shipping Address" required>
-          <input class="input" name="email" type="email" placeholder="Email (optional)">
-        </div>
-
-        <!-- hidden fields auto-filled by cart.js -->
-        <input type="hidden" name="order_json" id="order_json">
-        <input type="hidden" name="order_total" id="order_total">
-
-        <button class="btn" type="submit">Confirm Order</button>
-      </form>
-    </div>
-   
-  </main>
-
-  <script defer src="assets/js/cart.js"></script>
-
-  
 </body>
 </html>
