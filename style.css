@@ -365,4 +365,30 @@ header {
 .form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
 .input,textarea,select{padding:10px;border:1px solid #e6e6e6;border-radius:6px}
 @media(max-width:600px){.product img{height:150px}}
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-icon {
+  width: 35px;
+  height: 35px;
+  margin-top: 12px;
+}
+
+
 
