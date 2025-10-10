@@ -24,40 +24,6 @@
       </form>
     </div>
   </main>
-  <form id="checkoutForm" method="POST" action="process_order.php">
-  <input class="input" name="customer_name" placeholder="Full Name" required>
-  <input class="input" name="address" placeholder="Address" required>
-  <input class="input" name="contact_no" placeholder="Contact No" required>
-  
-  <!-- Hidden field for product list -->
-  <input type="hidden" name="products" id="productsField">
-  
-  <button class="btn" type="submit">Confirm Order</button>
-</form>
-<form method="POST" action="process_order.php">
-  <input name="customer_name" placeholder="Full Name" required>
-  <input name="address" placeholder="Address" required>
-  <input name="contact_no" placeholder="Contact Number" required>
-
-  <!-- Hidden cart data -->
-  <input type="hidden" name="order_json" id="order_json">
-  <input type="hidden" name="order_total" id="order_total">
-
-  <button type="submit">Confirm Order</button>
-</form>
-
-<script>
-  const cart = JSON.parse(localStorage.getItem("pc_cart") || "[]");
-  document.getElementById("order_json").value = JSON.stringify(cart);
-  document.getElementById("order_total").value = cart.reduce((s,i)=>s+i.price*i.qty,0);
-</script>
-
-
-<script>
-  // Pass cart items from sessionStorage/localStorage
-  const cartItems = JSON.parse(localStorage.getItem("cart") || "[]");
-  document.getElementById("productsField").value = cartItems.join(", ");
-</script>
 
   <script src="assets/js/script.js"></script>
 </body>
