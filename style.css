@@ -409,51 +409,7 @@ header {
 .popup.red {
   background-color: #dc3545;
 }
-/* === WELCOME BOX STYLES (GLOWING VERSION) === */
-#welcome-box {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: linear-gradient(135deg, #007bff, #00b3ff);
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 14px 22px;
-  border-radius: 14px;
-  box-shadow: 0 0 25px rgba(0, 150, 255, 0.4);
-  z-index: 9999;
-  display: none;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  transform: translateY(30px);
-  animation: boxGlow 3s ease-in-out infinite;
-}
 
-/* Smooth entrance */
-#welcome-box.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Fade-out animation */
-#welcome-box.fade-out {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* Soft glowing pulse animation */
-@keyframes boxGlow {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(0, 150, 255, 0.4), 0 0 50px rgba(0, 180, 255, 0.3);
-    background: linear-gradient(135deg, #007bff, #00b3ff);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(0, 190, 255, 0.7), 0 0 70px rgba(0, 210, 255, 0.6);
-    background: linear-gradient(135deg, #00a2ff, #00e0ff);
-  }
-}
 
 
 
