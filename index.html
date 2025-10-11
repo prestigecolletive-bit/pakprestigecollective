@@ -194,10 +194,70 @@
     }, 3000);
   });
 </script>
+  <!-- Welcome Message Box -->
+<div id="welcome-box">
+  <p>👋 Welcome! Tap to hear welcome message</p>
+  <audio id="welcome-audio" src="welcome.mp3"></audio>
+</div>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const box = document.getElementById("welcome-box");
+  const audio = document.getElementById("welcome-audio");
+
+  // Only show once per visit
+  if (sessionStorage.getItem("welcomeBoxShown") === "true") return;
+
+  // Show box after 3 seconds
+  setTimeout(() => {
+    box.classList.add("show");
+  }, 3000);
+
+  // Hide if not clicked in 10 seconds
+  const hideTimeout = setTimeout(() => {
+    box.classList.add("fade-out");
+    setTimeout(() => box.remove(), 1000);
+    sessionStorage.setItem("welcomeBoxShown", "true");
+  }, 13000); // 3s delay + 10s visible
+
+  // When user clicks the welcome box
+  box.addEventListener("click", async () => {
+    clearTimeout(hideTimeout);
+
+    try {
+      // Ensure audio can play fully before starting
+      await new Promise(resolve => {
+        if (audio.readyState >= 4) resolve();
+        else audio.addEventListener("canplaythrough", resolve, { once: true });
+      });
+
+      // Play audio from start
+      audio.currentTime = 0;
+      await audio.play();
+
+      // Keep the box until audio ends
+      audio.addEventListener("ended", () => {
+        box.classList.add("fade-out");
+        setTimeout(() => box.remove(), 1000);
+        sessionStorage.setItem("welcomeBoxShown", "true");
+      });
+
+    } catch (err) {
+      console.error("Audio playback failed:", err);
+    }
+  });
+});
+</script>
+
 
 
 </body>
 </html>
+
 
 
 
