@@ -1,35 +1,180 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Checkout - Prestige Collective</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Checkout - PakPrestigeCollective</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ---------- General Styles ---------- */
+    body { font-family: "Poppins", sans-serif; background:#f5f5f5; margin:0; padding:0;}
+    .container { max-width:500px; margin:50px auto; background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.1);}
+    h2 { text-align:center; margin-bottom:25px; color:#111; }
+    p { margin:5px 0; font-size:14px; }
+    span { font-weight:bold; }
+    input, select { width:100%; padding:12px; margin:8px 0 15px 0; border-radius:6px; border:1px solid #ccc; font-size:14px; }
+    button { padding:14px; border:none; background:#0a74da; color:#fff; border-radius:8px; cursor:pointer; width:100%; font-size:16px; font-weight:bold; }
+    button:hover { background:#055aa3; }
+    .totals { background:#f0f8ff; padding:15px; border-radius:8px; margin:15px 0; }
+    .totals p { margin:5px 0; font-size:15px; }
+    label { font-weight:bold; font-size:14px; }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo"><img src="assets/images/logo.png" alt=""><h1>Prestige Collective</h1></div>
-  </header>
 
-  <main class="container">
-    <h2>Checkout</h2>
-    <div class="card">
-      <p id="orderSummary">Order total: $0.00</p>
-      <form id="checkoutForm">
-        <div class="form-row">
-          <input class="input" name="name" placeholder="Full Name" required>
-                     <input name="contact_no" placeholder="Contact Number" required>
-           <input class="input" name="address" placeholder="Address" required>
-          <input class="input" name="email" type="email" placeholder="Email optional" optional>
-        </div>
-        <button class="btn" type="submit">Place Order</button>
-      </form>
+<div class="container">
+  <h2>Checkout</h2>
+  <form id="checkoutForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" placeholder="Enter your full name" required>
+
+    <label for="address">Complete Address</label>
+    <input type="text" id="address" placeholder="Street, City, Area" required>
+
+    <label for="phone">Phone Number (WhatsApp)</label>
+    <input type="text" id="phone" placeholder="e.g. 03001234567" required>
+
+    <label for="email">Email (optional)</label>
+    <input type="email" id="email" placeholder="you@example.com">
+
+    <label for="walletType">Select Payment Method</label>
+    <select id="walletType">
+      <option value="JazzCash">JazzCash</option>
+      <option value="EasyPaisa">EasyPaisa</option>
+      <option value="Bank">Bank Transfer</option>
+    </select>
+
+    <label for="walletNumber">Enter Account Number / IBAN</label>
+    <input type="text" id="walletNumber" placeholder="e.g. 03001234567 or PK12HBL..." required>
+
+    <div class="totals">
+      <p>Total Bill: ₨<span id="total-amount">0</span></p>
+      <p>Advance Payment: ₨<span id="advance-amount">0</span></p>
+      <p>Remaining COD: ₨<span id="remaining-amount">0</span></p>
     </div>
-  </main>
 
-  <script src="script.js"></script>
+    <button type="button" id="confirmOrder">Confirm Order</button>
+  </form>
+</div>
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js"></script>
+
+<script type="module">
+  // --- Firebase Setup ---
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyA3yWGoUELph2OM50KG1plmGLVZcWJOFAA",
+    authDomain: "pakprestigecollectiveorders.firebaseapp.com",
+    databaseURL: "https://pakprestigecollectiveorders-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "pakprestigecollectiveorders",
+    storageBucket: "pakprestigecollectiveorders.appspot.com",
+    messagingSenderId: "265505506637",
+    appId: "1:265505506637:web:28445d460e665dac06a304",
+    measurementId: "G-PSZY0XWS98"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // --- DOM Elements ---
+  const confirmBtn = document.getElementById("confirmOrder");
+
+  // Get cart from localStorage
+  let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  let cartTotal = 0;
+  cartItems.forEach(item => { cartTotal += item.price * item.qty; });
+  const advance = 200;
+  const remaining = cartTotal - advance;
+
+  // Display totals on page
+  document.getElementById("total-amount").innerText = cartTotal;
+  document.getElementById("advance-amount").innerText = advance;
+  document.getElementById("remaining-amount").innerText = remaining;
+
+  // Confirm Order click
+  confirmBtn.addEventListener("click", () => {
+    const name = document.getElementById("name").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const walletType = document.getElementById("walletType").value;
+    const walletNumber = document.getElementById("walletNumber").value.trim();
+
+    if (!name || !address || !phone) {
+      alert("Please fill all required fields (Name, Address, Phone).");
+      return;
+    }
+
+    // --- Construct cart text ---
+    let cartText = "";
+    cartItems.forEach(item => {
+      cartText += `${item.name} x${item.qty} - ₨${item.price * item.qty}%0A`;
+    });
+
+    // --- Save order to Firebase ---
+    push(ref(db, "orders"), {
+      name: name,
+      address: address,
+      phone: phone,
+      email: email,
+      walletType: walletType,
+      walletNumber: walletNumber,
+      cartItems: cartItems,
+      totalAmount: cartTotal,
+      advance: advance,
+      remaining: remaining,
+      orderTime: new Date().toLocaleString()
+    });
+
+    // --- WhatsApp message for owner ---
+    const ownerNumber = "923241717459"; // Your WhatsApp number
+    const ownerMsg = `🛍️ *New Order Received*%0A
+👤 Name: ${name}%0A
+📞 Phone: ${phone}%0A
+🏠 Address: ${address}%0A
+📧 Email: ${email || "N/A"}%0A
+🛒 Products:%0A${cartText}
+💰 Total: ₨${cartTotal}%0A
+💳 Advance: ₨${advance}%0A
+🚚 Remaining COD: ₨${remaining}%0A
+🏦 Payment Method: ${walletType}%0A
+💳 JazzCash Number: 03241717459 (Ismail Khan)%0A
+⚠️ Reminder: Customer must pay ₨200 advance within 2 hours & send screenshot on WhatsApp.`;
+
+    window.open(`https://wa.me/${ownerNumber}?text=${ownerMsg}`, "_blank");
+
+    // --- WhatsApp message for customer ---
+    const customerMsg = `✅ *Order Confirmed!*%0A
+Thank you ${name} for shopping with Park Prestige Collective.%0A
+🛒 Products:%0A${cartText}
+💰 Total Bill: ₨${cartTotal}%0A
+💳 Advance Paid: ₨${advance}%0A
+🚚 Remaining COD: ₨${remaining}%0A
+🏦 JazzCash: 03241717459 (Ismail Khan)%0A
+⚠️ Please pay ₨200 advance via JazzCash and share screenshot on WhatsApp.`;
+
+    // Open customer WhatsApp after 2 seconds
+    setTimeout(() => {
+      window.open(`https://wa.me/${phone.replace(/^0/, "92")}?text=${customerMsg}`, "_blank");
+    }, 2000);
+
+    // Save customer info for Thank You page
+    localStorage.setItem("custName", name);
+    localStorage.setItem("cartTotal", cartTotal);
+
+    // Redirect to Thank You page after 4s
+    setTimeout(() => {
+      window.location.href = "thankyou.html";
+    }, 4000);
+  });
+</script>
+
+
+
+
+
 </body>
 </html>
-
-
-
