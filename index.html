@@ -195,8 +195,36 @@
   });
 </script>
 
+
+
+  <script>
+  const addButtons = document.querySelectorAll('.add-to-cart');
+
+  addButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const id = button.getAttribute('data-id');
+      const name = button.getAttribute('data-name');
+      const price = Number(button.getAttribute('data-price'));
+
+      let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      const existing = cartItems.find(item => item.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cartItems.push({ id, name, price, qty: 1 });
+      }
+
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      alert(`${name} added to cart!`);
+    });
+  });
+</script>
+
+
 </body>
 </html>
+
 
 
 
