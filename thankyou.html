@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You - Park Prestige Collective</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+    .thankyou-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    h2 { color: #111; font-size: 24px; margin-bottom:10px; }
+    p { color: #444; font-size: 15px; margin: 8px 0; }
+    .summary-box {
+      background: #f8f8f8;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 15px;
+      text-align: left;
+    }
+    .summary-box p { margin: 8px 0; }
+    .wallet-box {
+      background: #e0f0ff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 15px;
+      text-align: left;
+    }
+    .wallet-box p { margin: 5px 0; font-weight: bold; }
+    .note {
+      background: #fffae6;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      text-align: left;
+      font-size: 14px;
+      color: #333;
+    }
+    .btn { display: inline-block; margin-top: 20px; background: #0a74da; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: 0.3s; }
+    .btn:hover { background: #055aa3; }
+    .copy-btn {
+      background: #0a74da;
+      color: #fff;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    .copy-btn:hover { background: #055aa3; }
+  </style>
+</head>
+<body>
+
+<div class="thankyou-container">
+  <h2>🎉 Thank You for Your Order!</h2>
+  <p>Your order has been placed successfully.</p>
+
+  <div class="summary-box">
+    <p><strong>Name:</strong> <span id="custName"></span></p>
+    <p><strong>Total Bill:</strong> ₨<span id="totalAmount"></span></p>
+    <p><strong>Advance Paid:</strong> ₨200</p>
+    <p><strong>Remaining on Delivery (COD):</strong> ₨<span id="remainingAmount"></span></p>
+  </div>
+
+  <div class="note">
+    Please pay the advance payment of ₨200 to the JazzCash account below. 
+    You can copy the account number and use it in your JazzCash app. 
+    After payment, kindly send the screenshot on our WhatsApp to confirm your order.
+  </div>
+
+  <div class="wallet-box">
+    <p>Wallet: JazzCash</p>
+    <p>Account Number: <span id="walletNumber">03241717459</span>
+      <button class="copy-btn" onclick="copyWallet()">Copy</button>
+    </p>
+    <p>Name: Ismail Khan</p>
+  </div>
+
+  <a href="index.html" class="btn">← Back to Home</a>
+</div>
+
+
+
+<script>
+  const name = localStorage.getItem("custName") || "Customer";
+  const total = Number(localStorage.getItem("cartTotal")) || 0;
+  const remaining = total > 200 ? total - 200 : 0;
+
+  document.getElementById("custName").innerText = name;
+  document.getElementById("totalAmount").innerText = total;
+  document.getElementById("remainingAmount").innerText = remaining;
+</script>
+
+<script>
+function copyWallet() {
+  const walletNumber = document.getElementById("walletNumber").innerText;
+  navigator.clipboard.writeText(walletNumber).then(() => {
+    alert("Wallet number copied: " + walletNumber);
+  }).catch(err => {
+    alert("Failed to copy wallet number.");
+    console.error(err);
+  });
+}
+</script>
+
+
+
+</body>
+</html>
