@@ -410,6 +410,48 @@ header {
   background-color: #dc3545;
 }
 
+/* ===== Responsive Banner (Show Full Image) ===== */
+.banner {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;               /* shows full image */
+  display: block;
+  border-radius: 12px;
+  object-fit: contain;        /* ensures no part is cut */
+  background-color: #f9f9f9;  /* fills space around if image ratio doesn’t match */
+  transition: transform 0.3s ease-in-out;
+}
+
+.banner-img:hover {
+  transform: scale(1.02);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .banner {
+    width: 94%;
+    margin: 15px auto 25px auto;
+  }
+
+  .banner-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+
 
 
 
