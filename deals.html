@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Watches Collection - Pak Prestige Collective</title>
+  <title>Deals - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ SEO & Indexing -->
+  <meta name="description" content="Best deals on watches, perfumes, and accessories — only at Pak Prestige Collective. Limited time discounts and exclusive offers!">
+  <meta name="keywords" content="deals, discounts, watches sale, perfumes sale, jewelry sale, Pak Prestige Collective">
+  <link rel="canonical" href="https://yourdomain.com/deal.html">
+
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ----- Product Grid (extra polish) ----- */
+    /* ===== Product Grid (same as watches.html) ===== */
     .collection-container {
       max-width: 1200px;
       margin: 40px auto;
@@ -56,6 +62,20 @@
     }
     .btn-row button:hover { background:#333; }
 
+    /* ✅ Popup Style (add to cart alert) */
+    .popup {
+      position: fixed;
+      right: -350px;
+      top: 20px;
+      background: #222;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: right 0.4s ease;
+      z-index: 1000;
+      font-size: 14px;
+    }
+
     @media (max-width:768px){
       .product-card{width:45%;}
     }
@@ -63,9 +83,7 @@
       .product-card{width:90%;}
     }
 
-
-
-    /* ✅ Make all product images uniform inside cards */
+     /* ✅ Make all product images uniform inside cards */
 .product-card img {
   width: 100%;
   height: 220px;         /* fixed display height for all */
@@ -73,10 +91,6 @@
   border-radius: 8px;    /* keeps your rounded corners */
   display: block;
 }
-
-
-
-
   </style>
 </head>
 <body>
@@ -109,7 +123,7 @@
               <a href="gift-items.html">Gift Items</a>
             </div>
           </li>
-          <li><a href="deals.html">Deals</a></li>
+          <li><a href="deals.html" class="active">Deals</a></li>
         </ul>
       </nav>
 
@@ -126,11 +140,12 @@
     </div>
   </header>
 
-  <!-- ===== Watches Collection ===== -->
+  <!-- ===== Deals Section ===== -->
   <section class="collection-container">
-    <h2>Watches Collection</h2>
-    <div class="product-grid" id="watchGrid"></div>
+    <h2>Exclusive Deals</h2>
+    <div class="product-grid" id="dealGrid"></div>
   </section>
+
 
   <!-- ===== Why Choose Us Section ===== -->
 <section class="why-choose-us">
@@ -162,7 +177,6 @@
   </div>
 </section>
 
-
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="footer-columns">
@@ -191,6 +205,7 @@
         </ul>
       </div>
     </div>
+
      <!-- Social Links -->
   <div class="social-links">
     <a href="https://www.facebook.com/pakprestigecollective/" target="_blank">
@@ -230,31 +245,29 @@
     <path d="M10 15l5.19-3L10 9v6zm12-3c0 2.21-.18 3.52-.32 4.19-.29 1.29-1.27 2.27-2.56 2.56C18.45 19.9 12 19.9 12 19.9s-6.45 0-7.12-.15a3.996 3.996 0 01-2.56-2.56C2.18 15.52 2 14.21 2 12s.18-3.52.32-4.19c.29-1.29 1.27-2.27 2.56-2.56C5.55 5.1 12 5.1 12 5.1s6.45 0 7.12.15a3.996 3.996 0 012.56 2.56C21.82 8.48 22 9.79 22 12z"/>
   </svg>
 </a>
-
     <div class="footer-bottom">© 2025 Pak Prestige Collective</div>
   </footer>
 
   <!-- ===== Scripts ===== -->
-  <script src="script.js"></script>
   <script>
-    // ==== Watches Data ====
-    const watches = [
-      {id:101,name:"Black Aura Watch",price:1500,img1:"images/watch1.webp",img2:"images/watch1.1.webp"},
-      {id:102,name:"Rolex Watch (gold&silver)",price:3900,img1:"images/watch2.webp",img2:"images/watch2.2.webp"},
-      {id:103,name:"Rolex Watch Golden Chain",price:3500,img1:"images/watch3.webp",img2:"images/watch3.3.webp"},
-      {id:104,name:"Customize Magnetic strap Watch",price:1700,img1:"images/watch4.webp",img2:"images/watch4.4.webp"},
-      {id:105,name:"Customize Chain style Watch",price:1800,img1:"images/watch5.webp",img2:"images/watch5.5.webp"},
-      {id:106,name:"Couple Watches metal chain",price:2800,img1:"images/watch6.webp",img2:"images/watch6.6.webp"},
-      {id:107,name:"T800 Ultra Smart Watch Orange",price:3800,img1:"images/watch7.webp",img2:"images/watch7.7.webp"},
-      {id:108,name:"Customize Leather Style Watch",price:1700,img1:"images/watch8.webp",img2:"images/watch8.8.webp"},
-      {id:109,name:"Rado Golden Watch",price:7500,img1:"images/watch9.webp",img2:"images/watch9.9.webp"},
-      {id:110,name:"White Aura Arabic Watch",price:2300,img1:"images/watch10.webp",img2:"images/watch10.10.webp"}
+    // ===== Deals Data (sample 10 products) =====
+    const deals = [
+      {id:201,name:"Islamic Car hang",price:1450,img1:"images/deal1.webp",img2:"images/deal1.1.webp"},
+      {id:202,name:"Customize name Temperature Water Bottle",price:1800,img1:"images/deal2.webp",img2:"images/deal2.2.webp"},
+      {id:203,name:"China Imported Black Name Stylus Pen +Keychain",price:1250,img1:"images/deal3.webp",img2:"images/deal3.3.webp"},
+      {id:204,name:"Wallet + Keychain",price:1950,img1:"images/deal4.webp",img2:"images/deal4.4.webp"},
+      {id:205,name:"Multi Color Light Name Stylus Pen",price:950,img1:"images/deal5.webp",img2:"images/deal5.5.webp"},
+      {id:206,name:"Square shape Customize 3D LED LIGHT LAMP",price:1550,img1:"images/deal6.webp",img2:"images/deal6.6.webp"},
+      {id:207,name:"Long Wallet",price:1600,img1:"images/deal7.webp",img2:"images/deal7.7.webp"},
+      {id:208,name:"Custom Infinity Necklace",price:1700,img1:"images/deal8.webp",img2:"images/deal8.8.webp"},
+      {id:209,name:"Metal Soft Touch Ballpoint Pen",price:850,img1:"images/deal9.webp",img2:"images/deal9.9.webp"},
+      {id:210,name:"Personalized Customize Name Earrings",price:1450,img1:"images/deal10.webp",img2:"images/deal10.10.webp"}
     ];
 
-    const grid = document.getElementById("watchGrid");
+    const grid = document.getElementById("dealGrid");
 
     // ==== Generate Product Cards ====
-    watches.forEach(p=>{
+    deals.forEach(p=>{
       const card=document.createElement("div");
       card.className="product-card";
       card.innerHTML=`
@@ -269,7 +282,7 @@
       grid.appendChild(card);
     });
 
-    // ==== Image Auto Slider ====
+    // ==== Image Auto Slider (same as watches.html) ====
     setInterval(()=>{
       document.querySelectorAll(".product-card img").forEach(img=>{
         const current=img.src;
@@ -278,10 +291,10 @@
       });
     },2000);
 
-    // ==== Add to Cart Logic (same system) ====
+    // ==== Add to Cart Logic ====
     document.querySelectorAll(".addCart").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=deals[i];
         let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
         const existing=cart.find(item=>item.id===product.id);
         if(existing) existing.qty++;
@@ -300,15 +313,13 @@
     // ==== Buy Now Logic ====
     document.querySelectorAll(".buyNow").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=deals[i];
         localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
         window.location.href="checkout.html";
       });
     });
-  </script>
 
-  <!-- Search Redirect -->
-  <script>
+    // ==== Search Redirect ====
     const searchInput=document.getElementById("searchBox");
     const searchBtn=document.getElementById("searchBtn");
     function handleSearch(){
@@ -322,15 +333,5 @@
     searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
   </script>
 
-
- <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/923241717459" 
-   class="whatsapp-float" 
-   target="_blank" 
-   title="Chat on WhatsApp">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        alt="WhatsApp" 
-        class="whatsapp-icon">
-</a>
 </body>
 </html>

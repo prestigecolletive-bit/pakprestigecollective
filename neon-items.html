@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Watches Collection - Pak Prestige Collective</title>
+  <title>Neon Items Collection - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ----- Product Grid (extra polish) ----- */
     .collection-container {
       max-width: 1200px;
       margin: 40px auto;
@@ -25,23 +24,27 @@
       gap: 20px;
     }
     .product-card {
-      background: #fff;
+      background: #0a0a0a;
+      color: #fff;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0,255,255,0.3);
       width: 220px;
       padding: 15px;
-      transition: transform .3s ease;
+      transition: transform .3s ease, box-shadow .3s ease;
     }
-    .product-card:hover { transform: translateY(-5px); }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255,0,255,0.4);
+    }
     .product-card img {
       width: 100%;
       height: 200px;
       border-radius: 8px;
       object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.3);
     }
-    .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#222;}
-    .product-card p { margin:0; color:#555; font-size:14px;}
-    .price { font-weight:600; margin:6px 0; color:#111;}
+    .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#0ff; }
+    .price { font-weight:600; margin:6px 0; color:#fff; }
     .btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px;}
     .btn-row button {
       flex:1;
@@ -51,18 +54,12 @@
       font-weight:600;
       cursor:pointer;
       color:#fff;
-      background:#c0c0c0;
-      transition:background .3s;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      transition: opacity .3s;
     }
-    .btn-row button:hover { background:#333; }
-
-    @media (max-width:768px){
-      .product-card{width:45%;}
-    }
-    @media (max-width:480px){
-      .product-card{width:90%;}
-    }
-
+    .btn-row button:hover { opacity: 0.8; }
+    @media (max-width:768px){.product-card{width:45%;}}
+    @media (max-width:480px){.product-card{width:90%;}}
 
 
     /* ✅ Make all product images uniform inside cards */
@@ -74,7 +71,10 @@
   display: block;
 }
 
-
+/* Fix: Make price text white on Neon Items page */
+.price {
+  color: #ffffff !important;
+}
 
 
   </style>
@@ -126,10 +126,10 @@
     </div>
   </header>
 
-  <!-- ===== Watches Collection ===== -->
+  <!-- ===== Neon Items Collection ===== -->
   <section class="collection-container">
-    <h2>Watches Collection</h2>
-    <div class="product-grid" id="watchGrid"></div>
+    <h2>Neon Items Collection</h2>
+    <div class="product-grid" id="neonGrid"></div>
   </section>
 
   <!-- ===== Why Choose Us Section ===== -->
@@ -191,6 +191,8 @@
         </ul>
       </div>
     </div>
+
+
      <!-- Social Links -->
   <div class="social-links">
     <a href="https://www.facebook.com/pakprestigecollective/" target="_blank">
@@ -237,24 +239,23 @@
   <!-- ===== Scripts ===== -->
   <script src="script.js"></script>
   <script>
-    // ==== Watches Data ====
-    const watches = [
-      {id:101,name:"Black Aura Watch",price:1500,img1:"images/watch1.webp",img2:"images/watch1.1.webp"},
-      {id:102,name:"Rolex Watch (gold&silver)",price:3900,img1:"images/watch2.webp",img2:"images/watch2.2.webp"},
-      {id:103,name:"Rolex Watch Golden Chain",price:3500,img1:"images/watch3.webp",img2:"images/watch3.3.webp"},
-      {id:104,name:"Customize Magnetic strap Watch",price:1700,img1:"images/watch4.webp",img2:"images/watch4.4.webp"},
-      {id:105,name:"Customize Chain style Watch",price:1800,img1:"images/watch5.webp",img2:"images/watch5.5.webp"},
-      {id:106,name:"Couple Watches metal chain",price:2800,img1:"images/watch6.webp",img2:"images/watch6.6.webp"},
-      {id:107,name:"T800 Ultra Smart Watch Orange",price:3800,img1:"images/watch7.webp",img2:"images/watch7.7.webp"},
-      {id:108,name:"Customize Leather Style Watch",price:1700,img1:"images/watch8.webp",img2:"images/watch8.8.webp"},
-      {id:109,name:"Rado Golden Watch",price:7500,img1:"images/watch9.webp",img2:"images/watch9.9.webp"},
-      {id:110,name:"White Aura Arabic Watch",price:2300,img1:"images/watch10.webp",img2:"images/watch10.10.webp"}
+    // ==== Neon Items Data ====
+    const neon = [
+      {id:1001,name:"Custom Neon Name Sign",price:3500,img1:"images/neon1.webp",img2:"images/neon1.1.webp"},
+      {id:1002,name:" Neon Light Design ",price:3500,img1:"images/neon2.webp",img2:"images/neon2.2.webp"},
+      {id:1003,name:"Blue Love Sign",price:4500,img1:"images/neon3.webp",img2:"images/neon3.3.webp"},
+      {id:1004,name:"Gift Lamp Neon Light",price:3700,img1:"images/neon4.webp",img2:"images/neon4.4.webp"},
+      {id:1005,name:"Angel Wing Neon Art",price:3900,img1:"images/neon5.webp",img2:"images/neon5.5.webp"},
+      {id:1006,name:"Custom Wall Neon",price:5200,img1:"images/neon6.webp",img2:"images/neon6.6.webp"},
+      {id:1007,name:"Blue Moon Neon Lamp",price:2900,img1:"images/neon7.webp",img2:"images/neon7.7.webp"},
+      {id:1008,name:"Birthday  Neon Sign Gift ",price:4200,img1:"images/neon8.webp",img2:"images/neon8.8.webp"},
+      {id:1009,name:"Lamp Shop Neon Light",price:3600,img1:"images/neon9.webp",img2:"images/neon9.9.webp"},
+      {id:1010,name:"Happy Birthday Wall Neon",price:4700,img1:"images/neon10.webp",img2:"images/neon10.10.webp"}
     ];
 
-    const grid = document.getElementById("watchGrid");
+    const grid=document.getElementById("neonGrid");
 
-    // ==== Generate Product Cards ====
-    watches.forEach(p=>{
+    neon.forEach(p=>{
       const card=document.createElement("div");
       card.className="product-card";
       card.innerHTML=`
@@ -269,7 +270,7 @@
       grid.appendChild(card);
     });
 
-    // ==== Image Auto Slider ====
+    // ==== Auto Slider ====
     setInterval(()=>{
       document.querySelectorAll(".product-card img").forEach(img=>{
         const current=img.src;
@@ -278,10 +279,10 @@
       });
     },2000);
 
-    // ==== Add to Cart Logic (same system) ====
+    // ==== Add to Cart ====
     document.querySelectorAll(".addCart").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=neon[i];
         let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
         const existing=cart.find(item=>item.id===product.id);
         if(existing) existing.qty++;
@@ -297,17 +298,16 @@
       });
     });
 
-    // ==== Buy Now Logic ====
+    // ==== Buy Now ====
     document.querySelectorAll(".buyNow").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=neon[i];
         localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
         window.location.href="checkout.html";
       });
     });
   </script>
 
-  <!-- Search Redirect -->
   <script>
     const searchInput=document.getElementById("searchBox");
     const searchBtn=document.getElementById("searchBtn");
@@ -322,8 +322,7 @@
     searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
   </script>
 
-
- <!-- WhatsApp Floating Button -->
+   <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923241717459" 
    class="whatsapp-float" 
    target="_blank" 
@@ -332,5 +331,9 @@
         alt="WhatsApp" 
         class="whatsapp-icon">
 </a>
+
+
+
+
 </body>
 </html>

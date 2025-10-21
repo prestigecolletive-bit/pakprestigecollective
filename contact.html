@@ -2,81 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Watches Collection - Pak Prestige Collective</title>
+  <title>Contact Us - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ----- Product Grid (extra polish) ----- */
-    .collection-container {
-      max-width: 1200px;
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-container {
+      max-width: 900px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 30px 20px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
       text-align: center;
-    }
-    .collection-container h2 {
-      font-size: 26px;
-      margin-bottom: 25px;
       color: #111;
+      margin-bottom: 25px;
     }
-    .product-grid {
+
+    form {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      flex-direction: column;
+      gap: 15px;
     }
-    .product-card {
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background: #0a74da;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #055aa3;
+    }
+
+    .contact-info {
+      margin-top: 30px;
       background: #fff;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 220px;
-      padding: 15px;
-      transition: transform .3s ease;
-    }
-    .product-card:hover { transform: translateY(-5px); }
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#222;}
-    .product-card p { margin:0; color:#555; font-size:14px;}
-    .price { font-weight:600; margin:6px 0; color:#111;}
-    .btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px;}
-    .btn-row button {
-      flex:1;
-      padding:8px;
-      border:none;
-      border-radius:6px;
-      font-weight:600;
-      cursor:pointer;
-      color:#fff;
-      background:#c0c0c0;
-      transition:background .3s;
-    }
-    .btn-row button:hover { background:#333; }
-
-    @media (max-width:768px){
-      .product-card{width:45%;}
-    }
-    @media (max-width:480px){
-      .product-card{width:90%;}
     }
 
+    .contact-info h3 {
+      margin-bottom: 10px;
+      color: #111;
+    }
 
+    .contact-info p {
+      margin: 5px 0;
+      color: #444;
+      font-size: 15px;
+    }
 
-    /* ✅ Make all product images uniform inside cards */
-.product-card img {
-  width: 100%;
-  height: 220px;         /* fixed display height for all */
-  object-fit: cover;     /* crops edges to fill evenly */
-  border-radius: 8px;    /* keeps your rounded corners */
-  display: block;
-}
+    .contact-info a {
+      color: #0a74da;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
 
-
-
+    @media (max-width: 768px) {
+      .contact-container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -97,7 +120,7 @@
             <div class="dropdown-content catalogue">
               <a href="shoes.html">Shoes</a>
               <a href="watches.html">Watches</a>
-              <a href="fragrance.html">Perfume</a>
+              <a href="perfume.html">Perfume</a>
               <a href="custom-jewelry.html">Customized Jewelry</a>
               <a href="bangles.html">Bangles</a>
               <a href="bracelets.html">Bracelets</a>
@@ -119,19 +142,32 @@
           <a href="blogs.html">Blogs & Articles</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms & Conditions</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html" class="active">Contact</a>
           <a href="about.html">About Us</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ===== Watches Collection ===== -->
-  <section class="collection-container">
-    <h2>Watches Collection</h2>
-    <div class="product-grid" id="watchGrid"></div>
-  </section>
+  <!-- ===== Contact Section ===== -->
+  <section class="contact-container">
+    <h2>Get in Touch</h2>
 
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Other Ways to Reach Us</h3>
+      <p><strong>📍 Address:</strong> Multan, Pakistan</p>
+      <p><strong>📞 WhatsApp:</strong> <a href="https://wa.me/923241717459" target="_blank">+92 324 1717459</a></p>
+      <p><strong>📧 Email:</strong> <a href="mailto:support@pakprestigecollective.store">prestigecollective@gmail.com</a></p>
+      <p><strong>🌐 Website:</strong> <a href="https://pakprestigecollective.store" target="_blank">pakprestigecollective.store</a></p>
+    </div>
+  </section>
   <!-- ===== Why Choose Us Section ===== -->
 <section class="why-choose-us">
   <h2>Why Shop With Us</h2>
@@ -234,96 +270,34 @@
     <div class="footer-bottom">© 2025 Pak Prestige Collective</div>
   </footer>
 
-  <!-- ===== Scripts ===== -->
-  <script src="script.js"></script>
+  <!-- ===== Script ===== -->
   <script>
-    // ==== Watches Data ====
-    const watches = [
-      {id:101,name:"Black Aura Watch",price:1500,img1:"images/watch1.webp",img2:"images/watch1.1.webp"},
-      {id:102,name:"Rolex Watch (gold&silver)",price:3900,img1:"images/watch2.webp",img2:"images/watch2.2.webp"},
-      {id:103,name:"Rolex Watch Golden Chain",price:3500,img1:"images/watch3.webp",img2:"images/watch3.3.webp"},
-      {id:104,name:"Customize Magnetic strap Watch",price:1700,img1:"images/watch4.webp",img2:"images/watch4.4.webp"},
-      {id:105,name:"Customize Chain style Watch",price:1800,img1:"images/watch5.webp",img2:"images/watch5.5.webp"},
-      {id:106,name:"Couple Watches metal chain",price:2800,img1:"images/watch6.webp",img2:"images/watch6.6.webp"},
-      {id:107,name:"T800 Ultra Smart Watch Orange",price:3800,img1:"images/watch7.webp",img2:"images/watch7.7.webp"},
-      {id:108,name:"Customize Leather Style Watch",price:1700,img1:"images/watch8.webp",img2:"images/watch8.8.webp"},
-      {id:109,name:"Rado Golden Watch",price:7500,img1:"images/watch9.webp",img2:"images/watch9.9.webp"},
-      {id:110,name:"White Aura Arabic Watch",price:2300,img1:"images/watch10.webp",img2:"images/watch10.10.webp"}
-    ];
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
 
-    const grid = document.getElementById("watchGrid");
-
-    // ==== Generate Product Cards ====
-    watches.forEach(p=>{
-      const card=document.createElement("div");
-      card.className="product-card";
-      card.innerHTML=`
-        <img src="${p.img1}" alt="${p.name}" data-alt="${p.img2}">
-        <h3>${p.name}</h3>
-        <p class="price">₨${p.price}</p>
-        <div class="btn-row">
-          <button class="addCart">Add to Cart</button>
-          <button class="buyNow">Buy Now</button>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-
-    // ==== Image Auto Slider ====
-    setInterval(()=>{
-      document.querySelectorAll(".product-card img").forEach(img=>{
-        const current=img.src;
-        img.src=img.dataset.alt;
-        img.dataset.alt=current;
-      });
-    },2000);
-
-    // ==== Add to Cart Logic (same system) ====
-    document.querySelectorAll(".addCart").forEach((btn,i)=>{
-      btn.addEventListener("click",()=>{
-        const product=watches[i];
-        let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
-        const existing=cart.find(item=>item.id===product.id);
-        if(existing) existing.qty++;
-        else cart.push({...product,qty:1});
-        localStorage.setItem("cartItems",JSON.stringify(cart));
-
-        const popup=document.createElement("div");
-        popup.className="popup";
-        popup.textContent=`${product.name} added to cart!`;
-        document.body.appendChild(popup);
-        setTimeout(()=>popup.style.right="20px",50);
-        setTimeout(()=>{popup.style.right="-350px";popup.remove();},2500);
-      });
-    });
-
-    // ==== Buy Now Logic ====
-    document.querySelectorAll(".buyNow").forEach((btn,i)=>{
-      btn.addEventListener("click",()=>{
-        const product=watches[i];
-        localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
-        window.location.href="checkout.html";
-      });
-    });
-  </script>
-
-  <!-- Search Redirect -->
-  <script>
-    const searchInput=document.getElementById("searchBox");
-    const searchBtn=document.getElementById("searchBtn");
-    function handleSearch(){
-      const q=searchInput.value.trim();
-      if(q!==""){
-        localStorage.setItem("searchQuery",q);
-        window.location.href="search.html";
+      if (!name || !email || !message) {
+        alert("Please fill all fields before submitting.");
+        return;
       }
-    }
-    searchBtn.addEventListener("click",handleSearch);
-    searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
-  </script>
 
+      const whatsappMsg = `Hello Pak Prestige Collective,%0A%0A🧍‍♂️ Name: ${name}%0A📧 Email: ${email}%0A💬 Message: ${message}`;
+      window.open(`https://wa.me/923241717459?text=${whatsappMsg}`, "_blank");
+    });
 
- <!-- WhatsApp Floating Button -->
+    const searchInput = document.getElementById("searchBox");
+    const searchBtn = document.getElementById("searchBtn");
+    searchBtn.addEventListener("click", () => {
+      const q = searchInput.value.trim();
+      if (q) {
+        localStorage.setItem("searchQuery", q);
+        window.location.href = "search.html";
+      }
+    });
+  </script> <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923241717459" 
    class="whatsapp-float" 
    target="_blank" 
@@ -332,5 +306,6 @@
         alt="WhatsApp" 
         class="whatsapp-icon">
 </a>
+
 </body>
 </html>

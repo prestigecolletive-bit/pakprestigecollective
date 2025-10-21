@@ -2,81 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Watches Collection - Pak Prestige Collective</title>
+  <title>Terms & Conditions - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ----- Product Grid (extra polish) ----- */
-    .collection-container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff;
+      color: #222;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
     }
-    .collection-container h2 {
-      font-size: 26px;
-      margin-bottom: 25px;
+
+    .terms-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
       color: #111;
     }
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .product-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 220px;
-      padding: 15px;
-      transition: transform .3s ease;
-    }
-    .product-card:hover { transform: translateY(-5px); }
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#222;}
-    .product-card p { margin:0; color:#555; font-size:14px;}
-    .price { font-weight:600; margin:6px 0; color:#111;}
-    .btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px;}
-    .btn-row button {
-      flex:1;
-      padding:8px;
-      border:none;
-      border-radius:6px;
-      font-weight:600;
-      cursor:pointer;
-      color:#fff;
-      background:#c0c0c0;
-      transition:background .3s;
-    }
-    .btn-row button:hover { background:#333; }
 
-    @media (max-width:768px){
-      .product-card{width:45%;}
-    }
-    @media (max-width:480px){
-      .product-card{width:90%;}
+    h4 {
+      font-size: 20px;
+      color: #111;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
     }
 
+    p {
+      margin-bottom: 15px;
+      color: #444;
+    }
 
+    ul {
+      margin-left: 20px;
+      color: #444;
+    }
 
-    /* ✅ Make all product images uniform inside cards */
-.product-card img {
-  width: 100%;
-  height: 220px;         /* fixed display height for all */
-  object-fit: cover;     /* crops edges to fill evenly */
-  border-radius: 8px;    /* keeps your rounded corners */
-  display: block;
-}
+    a {
+      color: #0a74da;
+      text-decoration: none;
+    }
 
+    a:hover {
+      text-decoration: underline;
+    }
 
-
-
+    @media (max-width: 768px) {
+      .terms-container {
+        margin: 20px;
+        padding: 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -97,7 +85,7 @@
             <div class="dropdown-content catalogue">
               <a href="shoes.html">Shoes</a>
               <a href="watches.html">Watches</a>
-              <a href="fragrance.html">Perfume</a>
+              <a href="perfume.html">Perfume</a>
               <a href="custom-jewelry.html">Customized Jewelry</a>
               <a href="bangles.html">Bangles</a>
               <a href="bracelets.html">Bracelets</a>
@@ -118,7 +106,7 @@
         <div class="dropdown-content more-menu">
           <a href="blogs.html">Blogs & Articles</a>
           <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms & Conditions</a>
+          <a href="terms.html" class="active">Terms & Conditions</a>
           <a href="contact.html">Contact</a>
           <a href="about.html">About Us</a>
         </div>
@@ -126,11 +114,80 @@
     </div>
   </header>
 
-  <!-- ===== Watches Collection ===== -->
-  <section class="collection-container">
-    <h2>Watches Collection</h2>
-    <div class="product-grid" id="watchGrid"></div>
+  <!-- ===== Terms Section ===== -->
+  <section class="terms-container">
+    <h2>Terms & Conditions</h2>
+
+    <p>
+      Welcome to <strong>Pak Prestige Collective</strong>. By accessing or using our website, 
+      you agree to comply with and be bound by the following Terms & Conditions. 
+      Please read them carefully before using our services.
+    </p>
+
+    <h4>1. Acceptance of Terms</h4>
+    <p>
+      By accessing our website or placing an order, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions.
+    </p>
+
+    <h4>2. Use of the Website</h4>
+    <p>
+      You agree to use our website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else's use of the site.
+    </p>
+
+    <h4>3. Product Information & Pricing</h4>
+    <p>
+      We make every effort to display product details, prices, and availability accurately.
+      However, errors may occur. We reserve the right to correct any errors and update information without prior notice.
+    </p>
+
+    <h4>4. Orders & Payments</h4>
+    <ul>
+      <li>Orders are processed only after advance payment confirmation (₨200 per order).</li>
+      <li>Payments can be made through JazzCash, EasyPaisa, or Bank Transfer.</li>
+      <li>We reserve the right to cancel any order suspected of fraud or incomplete details.</li>
+    </ul>
+
+    <h4>5. Shipping & Delivery</h4>
+    <p>
+      We offer home delivery across Pakistan. Delivery times may vary depending on location, product availability, and courier services. 
+      Once dispatched, delivery delays are beyond our control.
+    </p>
+
+    <h4>6. Returns & Refunds</h4>
+    <p>
+      Please refer to our <a href="refund.html">Returns & Exchange Policy</a> page for details regarding product returns, replacements, or refunds.
+    </p>
+
+    <h4>7. Intellectual Property</h4>
+    <p>
+      All content on this website — including logos, text, images, and designs — is the property of Pak Prestige Collective and protected by copyright laws.
+      Unauthorized use or reproduction is strictly prohibited.
+    </p>
+
+    <h4>8. Limitation of Liability</h4>
+    <p>
+      We are not liable for any indirect, incidental, or consequential damages resulting from the use or inability to use our website or products.
+    </p>
+
+    <h4>9. Privacy Policy</h4>
+    <p>
+      Please review our <a href="privacy.html">Privacy Policy</a> to understand how we handle your personal information.
+    </p>
+
+    <h4>10. Contact Information</h4>
+    <p>
+      For questions or concerns regarding these Terms, please contact us:  
+      <strong>Email:</strong> support@pakprestigecollective.store  
+      <br><strong>WhatsApp:</strong> +92 324 1717459
+    </p>
+
+    <h4>11. Updates to These Terms</h4>
+    <p>
+      Pak Prestige Collective reserves the right to modify these Terms & Conditions at any time. 
+      Any changes will be posted on this page with an updated revision date.
+    </p>
   </section>
+
 
   <!-- ===== Why Choose Us Section ===== -->
 <section class="why-choose-us">
@@ -161,7 +218,6 @@
     </div>
   </div>
 </section>
-
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
@@ -234,96 +290,25 @@
     <div class="footer-bottom">© 2025 Pak Prestige Collective</div>
   </footer>
 
-  <!-- ===== Scripts ===== -->
-  <script src="script.js"></script>
+  <!-- ===== Search Script ===== -->
   <script>
-    // ==== Watches Data ====
-    const watches = [
-      {id:101,name:"Black Aura Watch",price:1500,img1:"images/watch1.webp",img2:"images/watch1.1.webp"},
-      {id:102,name:"Rolex Watch (gold&silver)",price:3900,img1:"images/watch2.webp",img2:"images/watch2.2.webp"},
-      {id:103,name:"Rolex Watch Golden Chain",price:3500,img1:"images/watch3.webp",img2:"images/watch3.3.webp"},
-      {id:104,name:"Customize Magnetic strap Watch",price:1700,img1:"images/watch4.webp",img2:"images/watch4.4.webp"},
-      {id:105,name:"Customize Chain style Watch",price:1800,img1:"images/watch5.webp",img2:"images/watch5.5.webp"},
-      {id:106,name:"Couple Watches metal chain",price:2800,img1:"images/watch6.webp",img2:"images/watch6.6.webp"},
-      {id:107,name:"T800 Ultra Smart Watch Orange",price:3800,img1:"images/watch7.webp",img2:"images/watch7.7.webp"},
-      {id:108,name:"Customize Leather Style Watch",price:1700,img1:"images/watch8.webp",img2:"images/watch8.8.webp"},
-      {id:109,name:"Rado Golden Watch",price:7500,img1:"images/watch9.webp",img2:"images/watch9.9.webp"},
-      {id:110,name:"White Aura Arabic Watch",price:2300,img1:"images/watch10.webp",img2:"images/watch10.10.webp"}
-    ];
+    const searchInput = document.getElementById("searchBox");
+    const searchBtn = document.getElementById("searchBtn");
 
-    const grid = document.getElementById("watchGrid");
-
-    // ==== Generate Product Cards ====
-    watches.forEach(p=>{
-      const card=document.createElement("div");
-      card.className="product-card";
-      card.innerHTML=`
-        <img src="${p.img1}" alt="${p.name}" data-alt="${p.img2}">
-        <h3>${p.name}</h3>
-        <p class="price">₨${p.price}</p>
-        <div class="btn-row">
-          <button class="addCart">Add to Cart</button>
-          <button class="buyNow">Buy Now</button>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-
-    // ==== Image Auto Slider ====
-    setInterval(()=>{
-      document.querySelectorAll(".product-card img").forEach(img=>{
-        const current=img.src;
-        img.src=img.dataset.alt;
-        img.dataset.alt=current;
-      });
-    },2000);
-
-    // ==== Add to Cart Logic (same system) ====
-    document.querySelectorAll(".addCart").forEach((btn,i)=>{
-      btn.addEventListener("click",()=>{
-        const product=watches[i];
-        let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
-        const existing=cart.find(item=>item.id===product.id);
-        if(existing) existing.qty++;
-        else cart.push({...product,qty:1});
-        localStorage.setItem("cartItems",JSON.stringify(cart));
-
-        const popup=document.createElement("div");
-        popup.className="popup";
-        popup.textContent=`${product.name} added to cart!`;
-        document.body.appendChild(popup);
-        setTimeout(()=>popup.style.right="20px",50);
-        setTimeout(()=>{popup.style.right="-350px";popup.remove();},2500);
-      });
-    });
-
-    // ==== Buy Now Logic ====
-    document.querySelectorAll(".buyNow").forEach((btn,i)=>{
-      btn.addEventListener("click",()=>{
-        const product=watches[i];
-        localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
-        window.location.href="checkout.html";
-      });
-    });
-  </script>
-
-  <!-- Search Redirect -->
-  <script>
-    const searchInput=document.getElementById("searchBox");
-    const searchBtn=document.getElementById("searchBtn");
-    function handleSearch(){
-      const q=searchInput.value.trim();
-      if(q!==""){
-        localStorage.setItem("searchQuery",q);
-        window.location.href="search.html";
+    function handleSearch() {
+      const query = searchInput.value.trim();
+      if (query !== "") {
+        localStorage.setItem("searchQuery", query);
+        window.location.href = "search.html";
       }
     }
-    searchBtn.addEventListener("click",handleSearch);
-    searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
+
+    searchBtn.addEventListener("click", handleSearch);
+    searchInput.addEventListener("keyup", e => {
+      if (e.key === "Enter") handleSearch();
+    });
   </script>
-
-
- <!-- WhatsApp Floating Button -->
+   <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923241717459" 
    class="whatsapp-float" 
    target="_blank" 
@@ -332,5 +317,6 @@
         alt="WhatsApp" 
         class="whatsapp-icon">
 </a>
+
 </body>
 </html>

@@ -2,81 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Watches Collection - Pak Prestige Collective</title>
+  <title>Blogs & Articles - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ----- Product Grid (extra polish) ----- */
-    .collection-container {
-      max-width: 1200px;
+    .blog-hero {
+      background: linear-gradient(90deg, #0a74da, #4a90e2);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .blogs-container {
+      max-width: 1100px;
       margin: 40px auto;
       padding: 0 20px;
-      text-align: center;
     }
-    .collection-container h2 {
-      font-size: 26px;
-      margin-bottom: 25px;
-      color: #111;
+
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
     }
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .product-card {
+
+    .blog-card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 220px;
-      padding: 15px;
-      transition: transform .3s ease;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .product-card:hover { transform: translateY(-5px); }
-    .product-card img {
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .blog-card img {
       width: 100%;
       height: 200px;
-      border-radius: 8px;
       object-fit: cover;
     }
-    .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#222;}
-    .product-card p { margin:0; color:#555; font-size:14px;}
-    .price { font-weight:600; margin:6px 0; color:#111;}
-    .btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px;}
-    .btn-row button {
-      flex:1;
-      padding:8px;
-      border:none;
-      border-radius:6px;
-      font-weight:600;
-      cursor:pointer;
-      color:#fff;
-      background:#c0c0c0;
-      transition:background .3s;
-    }
-    .btn-row button:hover { background:#333; }
 
-    @media (max-width:768px){
-      .product-card{width:45%;}
-    }
-    @media (max-width:480px){
-      .product-card{width:90%;}
+    .blog-content {
+      padding: 20px;
+      text-align: left;
     }
 
+    .blog-content h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: #111;
+    }
 
+    .blog-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
 
-    /* ✅ Make all product images uniform inside cards */
-.product-card img {
-  width: 100%;
-  height: 220px;         /* fixed display height for all */
-  object-fit: cover;     /* crops edges to fill evenly */
-  border-radius: 8px;    /* keeps your rounded corners */
-  display: block;
-}
+    .read-more {
+      background: #0a74da;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
 
+    .read-more:hover {
+      background: #055aa3;
+    }
 
-
-
+    @media (max-width: 600px) {
+      .blog-card img { height: 180px; }
+    }
   </style>
 </head>
 <body>
@@ -97,7 +103,7 @@
             <div class="dropdown-content catalogue">
               <a href="shoes.html">Shoes</a>
               <a href="watches.html">Watches</a>
-              <a href="fragrance.html">Perfume</a>
+              <a href="perfume.html">Perfume</a>
               <a href="custom-jewelry.html">Customized Jewelry</a>
               <a href="bangles.html">Bangles</a>
               <a href="bracelets.html">Bracelets</a>
@@ -116,7 +122,7 @@
       <div class="nav-right dropdown">
         <button class="menu-btn">☰</button>
         <div class="dropdown-content more-menu">
-          <a href="blogs.html">Blogs & Articles</a>
+          <a href="blogs.html" class="active">Blogs & Articles</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms & Conditions</a>
           <a href="contact.html">Contact</a>
@@ -126,10 +132,70 @@
     </div>
   </header>
 
-  <!-- ===== Watches Collection ===== -->
-  <section class="collection-container">
-    <h2>Watches Collection</h2>
-    <div class="product-grid" id="watchGrid"></div>
+  <!-- ===== Hero Section ===== -->
+  <section class="blog-hero">
+    Our Blogs & Articles
+  </section>
+
+  <!-- ===== Blog Cards ===== -->
+  <section class="blogs-container">
+    <div class="blogs-grid">
+
+      <div class="blog-card">
+        <img src="y.watches.webp" alt="Luxury Watches">
+        <div class="blog-content">
+          <h3>Top 5 Luxury Watches for 2025</h3>
+          <p>Discover the finest timepieces that combine style and performance. Perfect for collectors and professionals alike.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="y.perfumes.webp" alt="Perfume Tips">
+        <div class="blog-content">
+          <h3>How to Choose Your Signature Perfume</h3>
+          <p>Finding your personal fragrance can be life-changing. Learn how to pick the right scent for your lifestyle.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="y.jewelry.webp" alt="Jewelry Care">
+        <div class="blog-content">
+          <h3>Essential Jewelry Care Tips</h3>
+          <p>Keep your gold, silver, and custom jewelry shining with these expert cleaning and storage techniques.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="y.lockets.webp" alt="Fashion Trends">
+        <div class="blog-content">
+          <h3>Top 10 Fashion Trends in 2025</h3>
+          <p>Stay ahead with the latest trends that blend minimalism, bold colors, and timeless designs for all seasons.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="y.gift.webp" alt="Gift Ideas">
+        <div class="blog-content">
+          <h3>Perfect Gift Ideas for Loved Ones</h3>
+          <p>Explore creative, affordable, and luxurious gift ideas to make every occasion truly memorable.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="y.neon.webp" alt="Home Decor">
+        <div class="blog-content">
+          <h3>Decorate Your Space with Neon Art</h3>
+          <p>Bring vibrant energy into your room or workspace with modern neon signs and wall art pieces.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- ===== Why Choose Us Section ===== -->
@@ -191,6 +257,7 @@
         </ul>
       </div>
     </div>
+
      <!-- Social Links -->
   <div class="social-links">
     <a href="https://www.facebook.com/pakprestigecollective/" target="_blank">
@@ -234,96 +301,25 @@
     <div class="footer-bottom">© 2025 Pak Prestige Collective</div>
   </footer>
 
-  <!-- ===== Scripts ===== -->
-  <script src="script.js"></script>
+  <!-- ===== Search Script ===== -->
   <script>
-    // ==== Watches Data ====
-    const watches = [
-      {id:101,name:"Black Aura Watch",price:1500,img1:"images/watch1.webp",img2:"images/watch1.1.webp"},
-      {id:102,name:"Rolex Watch (gold&silver)",price:3900,img1:"images/watch2.webp",img2:"images/watch2.2.webp"},
-      {id:103,name:"Rolex Watch Golden Chain",price:3500,img1:"images/watch3.webp",img2:"images/watch3.3.webp"},
-      {id:104,name:"Customize Magnetic strap Watch",price:1700,img1:"images/watch4.webp",img2:"images/watch4.4.webp"},
-      {id:105,name:"Customize Chain style Watch",price:1800,img1:"images/watch5.webp",img2:"images/watch5.5.webp"},
-      {id:106,name:"Couple Watches metal chain",price:2800,img1:"images/watch6.webp",img2:"images/watch6.6.webp"},
-      {id:107,name:"T800 Ultra Smart Watch Orange",price:3800,img1:"images/watch7.webp",img2:"images/watch7.7.webp"},
-      {id:108,name:"Customize Leather Style Watch",price:1700,img1:"images/watch8.webp",img2:"images/watch8.8.webp"},
-      {id:109,name:"Rado Golden Watch",price:7500,img1:"images/watch9.webp",img2:"images/watch9.9.webp"},
-      {id:110,name:"White Aura Arabic Watch",price:2300,img1:"images/watch10.webp",img2:"images/watch10.10.webp"}
-    ];
+    const searchInput = document.getElementById("searchBox");
+    const searchBtn = document.getElementById("searchBtn");
 
-    const grid = document.getElementById("watchGrid");
-
-    // ==== Generate Product Cards ====
-    watches.forEach(p=>{
-      const card=document.createElement("div");
-      card.className="product-card";
-      card.innerHTML=`
-        <img src="${p.img1}" alt="${p.name}" data-alt="${p.img2}">
-        <h3>${p.name}</h3>
-        <p class="price">₨${p.price}</p>
-        <div class="btn-row">
-          <button class="addCart">Add to Cart</button>
-          <button class="buyNow">Buy Now</button>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-
-    // ==== Image Auto Slider ====
-    setInterval(()=>{
-      document.querySelectorAll(".product-card img").forEach(img=>{
-        const current=img.src;
-        img.src=img.dataset.alt;
-        img.dataset.alt=current;
-      });
-    },2000);
-
-    // ==== Add to Cart Logic (same system) ====
-    document.querySelectorAll(".addCart").forEach((btn,i)=>{
-      btn.addEventListener("click",()=>{
-        const product=watches[i];
-        let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
-        const existing=cart.find(item=>item.id===product.id);
-        if(existing) existing.qty++;
-        else cart.push({...product,qty:1});
-        localStorage.setItem("cartItems",JSON.stringify(cart));
-
-        const popup=document.createElement("div");
-        popup.className="popup";
-        popup.textContent=`${product.name} added to cart!`;
-        document.body.appendChild(popup);
-        setTimeout(()=>popup.style.right="20px",50);
-        setTimeout(()=>{popup.style.right="-350px";popup.remove();},2500);
-      });
-    });
-
-    // ==== Buy Now Logic ====
-    document.querySelectorAll(".buyNow").forEach((btn,i)=>{
-      btn.addEventListener("click",()=>{
-        const product=watches[i];
-        localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
-        window.location.href="checkout.html";
-      });
-    });
-  </script>
-
-  <!-- Search Redirect -->
-  <script>
-    const searchInput=document.getElementById("searchBox");
-    const searchBtn=document.getElementById("searchBtn");
-    function handleSearch(){
-      const q=searchInput.value.trim();
-      if(q!==""){
-        localStorage.setItem("searchQuery",q);
-        window.location.href="search.html";
+    function handleSearch() {
+      const query = searchInput.value.trim();
+      if (query !== "") {
+        localStorage.setItem("searchQuery", query);
+        window.location.href = "search.html";
       }
     }
-    searchBtn.addEventListener("click",handleSearch);
-    searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
+
+    searchBtn.addEventListener("click", handleSearch);
+    searchInput.addEventListener("keyup", e => {
+      if (e.key === "Enter") handleSearch();
+    });
   </script>
-
-
- <!-- WhatsApp Floating Button -->
+   <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923241717459" 
    class="whatsapp-float" 
    target="_blank" 

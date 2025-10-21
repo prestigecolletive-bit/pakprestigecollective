@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Watches Collection - Pak Prestige Collective</title>
+  <title>Customized Jewelry - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ----- Product Grid (extra polish) ----- */
     .collection-container {
       max-width: 1200px;
       margin: 40px auto;
@@ -40,7 +39,6 @@
       object-fit: cover;
     }
     .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#222;}
-    .product-card p { margin:0; color:#555; font-size:14px;}
     .price { font-weight:600; margin:6px 0; color:#111;}
     .btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px;}
     .btn-row button {
@@ -55,14 +53,8 @@
       transition:background .3s;
     }
     .btn-row button:hover { background:#333; }
-
-    @media (max-width:768px){
-      .product-card{width:45%;}
-    }
-    @media (max-width:480px){
-      .product-card{width:90%;}
-    }
-
+    @media (max-width:768px){.product-card{width:45%;}}
+    @media (max-width:480px){.product-card{width:90%;}}
 
 
     /* ✅ Make all product images uniform inside cards */
@@ -73,9 +65,6 @@
   border-radius: 8px;    /* keeps your rounded corners */
   display: block;
 }
-
-
-
 
   </style>
 </head>
@@ -126,11 +115,12 @@
     </div>
   </header>
 
-  <!-- ===== Watches Collection ===== -->
+  <!-- ===== Customized Jewelry Collection ===== -->
   <section class="collection-container">
-    <h2>Watches Collection</h2>
-    <div class="product-grid" id="watchGrid"></div>
+    <h2>Customized Jewelry</h2>
+    <div class="product-grid" id="jewelryGrid"></div>
   </section>
+
 
   <!-- ===== Why Choose Us Section ===== -->
 <section class="why-choose-us">
@@ -161,7 +151,6 @@
     </div>
   </div>
 </section>
-
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
@@ -237,24 +226,23 @@
   <!-- ===== Scripts ===== -->
   <script src="script.js"></script>
   <script>
-    // ==== Watches Data ====
-    const watches = [
-      {id:101,name:"Black Aura Watch",price:1500,img1:"images/watch1.webp",img2:"images/watch1.1.webp"},
-      {id:102,name:"Rolex Watch (gold&silver)",price:3900,img1:"images/watch2.webp",img2:"images/watch2.2.webp"},
-      {id:103,name:"Rolex Watch Golden Chain",price:3500,img1:"images/watch3.webp",img2:"images/watch3.3.webp"},
-      {id:104,name:"Customize Magnetic strap Watch",price:1700,img1:"images/watch4.webp",img2:"images/watch4.4.webp"},
-      {id:105,name:"Customize Chain style Watch",price:1800,img1:"images/watch5.webp",img2:"images/watch5.5.webp"},
-      {id:106,name:"Couple Watches metal chain",price:2800,img1:"images/watch6.webp",img2:"images/watch6.6.webp"},
-      {id:107,name:"T800 Ultra Smart Watch Orange",price:3800,img1:"images/watch7.webp",img2:"images/watch7.7.webp"},
-      {id:108,name:"Customize Leather Style Watch",price:1700,img1:"images/watch8.webp",img2:"images/watch8.8.webp"},
-      {id:109,name:"Rado Golden Watch",price:7500,img1:"images/watch9.webp",img2:"images/watch9.9.webp"},
-      {id:110,name:"White Aura Arabic Watch",price:2300,img1:"images/watch10.webp",img2:"images/watch10.10.webp"}
+    // ==== Customized Jewelry Data ====
+    const jewelry = [
+      {id:401,name:"Customize Name Pendant",price:1500,img1:"images/jewlery1.webp",img2:"images/jewlery1.1.webp"},
+      {id:402,name:"Customize Name Bangles",price:1500,img1:"images/jewlery2.webp",img2:"images/jewlery2.2.webp"},
+      {id:403,name:"Custom Name Ring<BR>(For Girls)",price:600,img1:"images/jewlery3.webp",img2:"images/jewlery3.3.webp"},
+      {id:404,name:"Personalized Customize Name Earrings",price:1400,img1:"images/jewlery4.webp",img2:"images/jewlery4.4.webp"},
+      {id:405,name:"Name Initial Ingraved Cufflinks",price:1600,img1:"images/jewlery5.webp",img2:"images/jewlery5.5.webp"},
+      {id:406,name:"customize Heart Neacklace",price:1700,img1:"images/jewlery6.webp",img2:"images/jewlery6.6.webp"},
+      {id:407,name:"Customize Name Cufflinks",price:1400,img1:"images/jewlery7.webp",img2:"images/jewlery7.7.webp"},
+      {id:408,name:"Custom Name Ring<BR>(FOR Boys)",price:600,img1:"images/jewlery8.webp",img2:"images/jewlery8.8.webp"},
+      {id:409,name:"Charm Name Bangle",price:1600,img1:"images/jewlery9.webp",img2:"images/jewlery9.9.webp"},
+      {id:410,name:"Letter Heart Pendant",price:1700,img1:"images/jewlery10.webp",img2:"images/jewlery10.10.webp"}
     ];
 
-    const grid = document.getElementById("watchGrid");
+    const grid=document.getElementById("jewelryGrid");
 
-    // ==== Generate Product Cards ====
-    watches.forEach(p=>{
+    jewelry.forEach(p=>{
       const card=document.createElement("div");
       card.className="product-card";
       card.innerHTML=`
@@ -269,7 +257,7 @@
       grid.appendChild(card);
     });
 
-    // ==== Image Auto Slider ====
+    // ==== Auto Slider ====
     setInterval(()=>{
       document.querySelectorAll(".product-card img").forEach(img=>{
         const current=img.src;
@@ -278,10 +266,10 @@
       });
     },2000);
 
-    // ==== Add to Cart Logic (same system) ====
+    // ==== Add to Cart ====
     document.querySelectorAll(".addCart").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=jewelry[i];
         let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
         const existing=cart.find(item=>item.id===product.id);
         if(existing) existing.qty++;
@@ -297,17 +285,16 @@
       });
     });
 
-    // ==== Buy Now Logic ====
+    // ==== Buy Now ====
     document.querySelectorAll(".buyNow").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=jewelry[i];
         localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
         window.location.href="checkout.html";
       });
     });
   </script>
 
-  <!-- Search Redirect -->
   <script>
     const searchInput=document.getElementById("searchBox");
     const searchBtn=document.getElementById("searchBtn");
@@ -321,9 +308,7 @@
     searchBtn.addEventListener("click",handleSearch);
     searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
   </script>
-
-
- <!-- WhatsApp Floating Button -->
+   <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923241717459" 
    class="whatsapp-float" 
    target="_blank" 

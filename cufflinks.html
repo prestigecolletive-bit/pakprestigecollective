@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Watches Collection - Pak Prestige Collective</title>
+  <title>Cufflinks Collection - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ----- Product Grid (extra polish) ----- */
     .collection-container {
       max-width: 1200px;
       margin: 40px auto;
@@ -40,7 +39,6 @@
       object-fit: cover;
     }
     .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#222;}
-    .product-card p { margin:0; color:#555; font-size:14px;}
     .price { font-weight:600; margin:6px 0; color:#111;}
     .btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px;}
     .btn-row button {
@@ -55,14 +53,8 @@
       transition:background .3s;
     }
     .btn-row button:hover { background:#333; }
-
-    @media (max-width:768px){
-      .product-card{width:45%;}
-    }
-    @media (max-width:480px){
-      .product-card{width:90%;}
-    }
-
+    @media (max-width:768px){.product-card{width:45%;}}
+    @media (max-width:480px){.product-card{width:90%;}}
 
 
     /* ✅ Make all product images uniform inside cards */
@@ -73,9 +65,6 @@
   border-radius: 8px;    /* keeps your rounded corners */
   display: block;
 }
-
-
-
 
   </style>
 </head>
@@ -126,10 +115,10 @@
     </div>
   </header>
 
-  <!-- ===== Watches Collection ===== -->
+  <!-- ===== Cufflinks Collection ===== -->
   <section class="collection-container">
-    <h2>Watches Collection</h2>
-    <div class="product-grid" id="watchGrid"></div>
+    <h2>Cufflinks Collection</h2>
+    <div class="product-grid" id="cufflinksGrid"></div>
   </section>
 
   <!-- ===== Why Choose Us Section ===== -->
@@ -161,7 +150,6 @@
     </div>
   </div>
 </section>
-
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
@@ -237,24 +225,23 @@
   <!-- ===== Scripts ===== -->
   <script src="script.js"></script>
   <script>
-    // ==== Watches Data ====
-    const watches = [
-      {id:101,name:"Black Aura Watch",price:1500,img1:"images/watch1.webp",img2:"images/watch1.1.webp"},
-      {id:102,name:"Rolex Watch (gold&silver)",price:3900,img1:"images/watch2.webp",img2:"images/watch2.2.webp"},
-      {id:103,name:"Rolex Watch Golden Chain",price:3500,img1:"images/watch3.webp",img2:"images/watch3.3.webp"},
-      {id:104,name:"Customize Magnetic strap Watch",price:1700,img1:"images/watch4.webp",img2:"images/watch4.4.webp"},
-      {id:105,name:"Customize Chain style Watch",price:1800,img1:"images/watch5.webp",img2:"images/watch5.5.webp"},
-      {id:106,name:"Couple Watches metal chain",price:2800,img1:"images/watch6.webp",img2:"images/watch6.6.webp"},
-      {id:107,name:"T800 Ultra Smart Watch Orange",price:3800,img1:"images/watch7.webp",img2:"images/watch7.7.webp"},
-      {id:108,name:"Customize Leather Style Watch",price:1700,img1:"images/watch8.webp",img2:"images/watch8.8.webp"},
-      {id:109,name:"Rado Golden Watch",price:7500,img1:"images/watch9.webp",img2:"images/watch9.9.webp"},
-      {id:110,name:"White Aura Arabic Watch",price:2300,img1:"images/watch10.webp",img2:"images/watch10.10.webp"}
+    // ==== Cufflinks Data ====
+    const cufflinks = [
+      {id:801,name:"Classic Gold Cufflinks",price:1400,img1:"images/cuff1.webp",img2:"images/cuff1.1.webp"},
+      {id:802,name:"silver Round Cufflinks",price:1600,img1:"images/cuff2.webp",img2:"images/cuff2.2.webp"},
+      {id:803,name:"Classic Silver Cufflinks",price:1500,img1:"images/cuff3.webp",img2:"images/cuff3.3.webp"},
+      {id:804,name:"Rolex Cufflinks with Box and Chain Gold & SIlver Color",price:2200,img1:"images/cuff4.webp",img2:"images/cuff4.4.webp"},
+      {id:805,name:"COMBINED INITIAL CUFFLINKS",price:1600,img1:"images/cuff5.webp",img2:"images/cuff5.5.webp"},
+      {id:806,name:"Luxury Gold Design Cufflinks",price:1500,img1:"images/cuff6.webp",img2:"images/cuff6.6.webp"},
+      {id:807,name:"China Original Cufflink | With Your Name",price:1400,img1:"images/cuff7.webp",img2:"images/cuff7.7.webp"},
+      {id:808,name:"Crystal Round Cufflinks",price:1400,img1:"images/cuff8.webp",img2:"images/cuff8.8.webp"},
+      {id:809,name:"Crown Engraved Cufflinks",price:1500,img1:"images/cuff9.webp",img2:"images/cuff9.9.webp"},
+      {id:810,name:"Markhor Cufflinks",price:1400,img1:"images/cuff10.webp",img2:"images/cuff10.10.webp"}
     ];
 
-    const grid = document.getElementById("watchGrid");
+    const grid=document.getElementById("cufflinksGrid");
 
-    // ==== Generate Product Cards ====
-    watches.forEach(p=>{
+    cufflinks.forEach(p=>{
       const card=document.createElement("div");
       card.className="product-card";
       card.innerHTML=`
@@ -269,7 +256,7 @@
       grid.appendChild(card);
     });
 
-    // ==== Image Auto Slider ====
+    // ==== Auto Slider ====
     setInterval(()=>{
       document.querySelectorAll(".product-card img").forEach(img=>{
         const current=img.src;
@@ -278,10 +265,10 @@
       });
     },2000);
 
-    // ==== Add to Cart Logic (same system) ====
+    // ==== Add to Cart ====
     document.querySelectorAll(".addCart").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=cufflinks[i];
         let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
         const existing=cart.find(item=>item.id===product.id);
         if(existing) existing.qty++;
@@ -297,17 +284,16 @@
       });
     });
 
-    // ==== Buy Now Logic ====
+    // ==== Buy Now ====
     document.querySelectorAll(".buyNow").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=cufflinks[i];
         localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
         window.location.href="checkout.html";
       });
     });
   </script>
 
-  <!-- Search Redirect -->
   <script>
     const searchInput=document.getElementById("searchBox");
     const searchBtn=document.getElementById("searchBtn");
@@ -321,9 +307,7 @@
     searchBtn.addEventListener("click",handleSearch);
     searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
   </script>
-
-
- <!-- WhatsApp Floating Button -->
+   <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923241717459" 
    class="whatsapp-float" 
    target="_blank" 

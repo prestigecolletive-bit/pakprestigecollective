@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Watches Collection - Pak Prestige Collective</title>
+  <title>Bangles Collection - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ----- Product Grid (extra polish) ----- */
     .collection-container {
       max-width: 1200px;
       margin: 40px auto;
@@ -40,7 +39,6 @@
       object-fit: cover;
     }
     .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#222;}
-    .product-card p { margin:0; color:#555; font-size:14px;}
     .price { font-weight:600; margin:6px 0; color:#111;}
     .btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px;}
     .btn-row button {
@@ -55,14 +53,8 @@
       transition:background .3s;
     }
     .btn-row button:hover { background:#333; }
-
-    @media (max-width:768px){
-      .product-card{width:45%;}
-    }
-    @media (max-width:480px){
-      .product-card{width:90%;}
-    }
-
+    @media (max-width:768px){.product-card{width:45%;}}
+    @media (max-width:480px){.product-card{width:90%;}}
 
 
     /* ✅ Make all product images uniform inside cards */
@@ -73,9 +65,6 @@
   border-radius: 8px;    /* keeps your rounded corners */
   display: block;
 }
-
-
-
 
   </style>
 </head>
@@ -126,11 +115,12 @@
     </div>
   </header>
 
-  <!-- ===== Watches Collection ===== -->
+  <!-- ===== Bangles Collection ===== -->
   <section class="collection-container">
-    <h2>Watches Collection</h2>
-    <div class="product-grid" id="watchGrid"></div>
+    <h2>Bangles Collection</h2>
+    <div class="product-grid" id="bangleGrid"></div>
   </section>
+
 
   <!-- ===== Why Choose Us Section ===== -->
 <section class="why-choose-us">
@@ -191,6 +181,7 @@
         </ul>
       </div>
     </div>
+
      <!-- Social Links -->
   <div class="social-links">
     <a href="https://www.facebook.com/pakprestigecollective/" target="_blank">
@@ -237,24 +228,23 @@
   <!-- ===== Scripts ===== -->
   <script src="script.js"></script>
   <script>
-    // ==== Watches Data ====
-    const watches = [
-      {id:101,name:"Black Aura Watch",price:1500,img1:"images/watch1.webp",img2:"images/watch1.1.webp"},
-      {id:102,name:"Rolex Watch (gold&silver)",price:3900,img1:"images/watch2.webp",img2:"images/watch2.2.webp"},
-      {id:103,name:"Rolex Watch Golden Chain",price:3500,img1:"images/watch3.webp",img2:"images/watch3.3.webp"},
-      {id:104,name:"Customize Magnetic strap Watch",price:1700,img1:"images/watch4.webp",img2:"images/watch4.4.webp"},
-      {id:105,name:"Customize Chain style Watch",price:1800,img1:"images/watch5.webp",img2:"images/watch5.5.webp"},
-      {id:106,name:"Couple Watches metal chain",price:2800,img1:"images/watch6.webp",img2:"images/watch6.6.webp"},
-      {id:107,name:"T800 Ultra Smart Watch Orange",price:3800,img1:"images/watch7.webp",img2:"images/watch7.7.webp"},
-      {id:108,name:"Customize Leather Style Watch",price:1700,img1:"images/watch8.webp",img2:"images/watch8.8.webp"},
-      {id:109,name:"Rado Golden Watch",price:7500,img1:"images/watch9.webp",img2:"images/watch9.9.webp"},
-      {id:110,name:"White Aura Arabic Watch",price:2300,img1:"images/watch10.webp",img2:"images/watch10.10.webp"}
+    // ==== Bangles Data ====
+    const bangles = [
+      {id:501,name:"Customize Cuff Bangles",price:1700,img1:"images/bangle1.webp",img2:"images/bangle1.1.webp"},
+      {id:502,name:"Customize Cuff Bangles<Br>(black,silver,gold)",price:1800,img1:"images/bangles2.webp",img2:"images/bangle2.2.webp"},
+      {id:503,name:"Customize Name Bangle for Girls",price:1700,img1:"images/bangles3.webp",img2:"images/bangles3.3.webp"},
+      {id:504,name:"Customize Name Bangle for Girls",price:1700,img1:"images/bangles4.webp",img2:"images/bangles4.4.webp"},
+      {id:505,name:"Customize Bangle For Girls",price:1600,img1:"images/bangles5.webp",img2:"images/bangles5.5.webp"},
+      {id:506,name:"Custom Name Bangle",price:1600,img1:"images/bangles6.webp",img2:"images/bangles6.6.webp"},
+      {id:507,name:"Adjustable Cuff",price:1600,img1:"images/bangles7.webp",img2:"images/bangles7.7.webp"},
+      {id:508,name:"Custom Gold Plated",price:1700,img1:"images/bangles8.webp",img2:"images/bangles8.8.webp"},
+      {id:509,name:"Name Customize Bracelet",price:1800,img1:"images/bangles9.webp",img2:"images/bangles9.9.webp"},
+      {id:510,name:"Engraved Cuff Bangle",price:1800,img1:"images/bangles10.webp",img2:"images/bangles10.10.webp"}
     ];
 
-    const grid = document.getElementById("watchGrid");
+    const grid=document.getElementById("bangleGrid");
 
-    // ==== Generate Product Cards ====
-    watches.forEach(p=>{
+    bangles.forEach(p=>{
       const card=document.createElement("div");
       card.className="product-card";
       card.innerHTML=`
@@ -269,7 +259,7 @@
       grid.appendChild(card);
     });
 
-    // ==== Image Auto Slider ====
+    // ==== Auto Slider ====
     setInterval(()=>{
       document.querySelectorAll(".product-card img").forEach(img=>{
         const current=img.src;
@@ -278,10 +268,10 @@
       });
     },2000);
 
-    // ==== Add to Cart Logic (same system) ====
+    // ==== Add to Cart ====
     document.querySelectorAll(".addCart").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=bangles[i];
         let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
         const existing=cart.find(item=>item.id===product.id);
         if(existing) existing.qty++;
@@ -297,17 +287,16 @@
       });
     });
 
-    // ==== Buy Now Logic ====
+    // ==== Buy Now ====
     document.querySelectorAll(".buyNow").forEach((btn,i)=>{
       btn.addEventListener("click",()=>{
-        const product=watches[i];
+        const product=bangles[i];
         localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
         window.location.href="checkout.html";
       });
     });
   </script>
 
-  <!-- Search Redirect -->
   <script>
     const searchInput=document.getElementById("searchBox");
     const searchBtn=document.getElementById("searchBtn");
@@ -321,9 +310,7 @@
     searchBtn.addEventListener("click",handleSearch);
     searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
   </script>
-
-
- <!-- WhatsApp Floating Button -->
+   <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923241717459" 
    class="whatsapp-float" 
    target="_blank" 

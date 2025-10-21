@@ -2,77 +2,321 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Bracelets Collection - Pak Prestige Collective</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Bracelets Collection</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .collection-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .collection-container h2 {
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #111;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      padding: 15px;
+      transition: transform .3s ease;
+    }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .product-card h3 { margin: 10px 0 4px; font-size: 16px; color:#222;}
+    .price { font-weight:600; margin:6px 0; color:#111;}
+    .btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px;}
+    .btn-row button {
+      flex:1;
+      padding:8px;
+      border:none;
+      border-radius:6px;
+      font-weight:600;
+      cursor:pointer;
+      color:#fff;
+      background:#c0c0c0;
+      transition:background .3s;
+    }
+    .btn-row button:hover { background:#333; }
+    @media (max-width:768px){.product-card{width:45%;}}
+    @media (max-width:480px){.product-card{width:90%;}}
+
+
+    /* ✅ Make all product images uniform inside cards */
+.product-card img {
+  width: 100%;
+  height: 220px;         /* fixed display height for all */
+  object-fit: cover;     /* crops edges to fill evenly */
+  border-radius: 8px;    /* keeps your rounded corners */
+  display: block;
+}
+
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Prestige Collective – Custom Bracelets</h1>
+  <!-- ===== Navigation Bar ===== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <input type="text" id="searchBox" placeholder="Search products...">
+        <button id="searchBtn">🔍</button>
+      </div>
+
+      <nav class="nav-center">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Catalogue ▾</a>
+            <div class="dropdown-content catalogue">
+              <a href="shoes.html">Shoes</a>
+              <a href="watches.html">Watches</a>
+              <a href="fragrance.html">Perfume</a>
+              <a href="custom-jewelry.html">Customized Jewelry</a>
+              <a href="bangles.html">Bangles</a>
+              <a href="bracelets.html">Bracelets</a>
+              <a href="necklaces.html">Necklaces</a>
+              <a href="cufflinks.html">Cufflinks</a>
+              <a href="lockets.html">Lockets</a>
+              <a href="neon-items.html">Neon Items</a>
+              <a href="islamic-custom.html">Islamic Customized Items</a>
+              <a href="gift-items.html">Gift Items</a>
+            </div>
+          </li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right dropdown">
+        <button class="menu-btn">☰</button>
+        <div class="dropdown-content more-menu">
+          <a href="blogs.html">Blogs & Articles</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About Us</a>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- Subcategory Buttons -->
-  <div class="subcategory-bar">
-    <button onclick="showCategory('men')">Men</button>
-    <button onclick="showCategory('ladies')">Ladies</button>
-  </div>
+  <!-- ===== Bracelets Collection ===== -->
+  <section class="collection-container">
+    <h2>Bracelets Collection</h2>
+    <div class="product-grid" id="braceletGrid"></div>
+  </section>
 
-  <!-- Product Sections -->
-  <div class="product-sections">
-    
-    <!-- Men Bracelets -->
-    <div class="product-category" id="men">
-      <h2>Men’s Bracelets</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="images/men-bracelet1.jpg" alt="Men Bracelet">
-          <p>Black Leather Bracelet</p>
-          <p>Rs. 1500</p>
-          <button>Add to Cart</button>
-        </div>
 
-        <div class="product-card">
-          <img src="images/men-bracelet2.jpg" alt="Men Bracelet">
-          <p>Steel Chain Bracelet</p>
-          <p>Rs. 2200</p>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+  <!-- ===== Why Choose Us Section ===== -->
+<section class="why-choose-us">
+  <h2>Why Shop With Us</h2>
+  <div class="choose-grid">
+    <div class="choose-card">
+      <img src="y.genuine.webp" alt="Genuine Products">
+      <h4>100% Genuine Products</h4>
+      <p>All our products are quality-checked and authentic, ensuring your complete satisfaction.</p>
     </div>
 
-    <!-- Ladies Bracelets -->
-    <div class="product-category" id="ladies" style="display:none;">
-      <h2>Ladies’ Bracelets</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="images/ladies-bracelet1.jpg" alt="Ladies Bracelet">
-          <p>Rose Gold Charm Bracelet</p>
-          <p>Rs. 1800</p>
-          <button>Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-          <img src="images/ladies-bracelet2.jpg" alt="Ladies Bracelet">
-          <p>Crystal Beaded Bracelet</p>
-          <p>Rs. 2000</p>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+    <div class="choose-card">
+      <img src="y.fastdilivery.webp" alt="Fast Delivery">
+      <h4>Fast Home Delivery</h4>
+      <p>Get your favorite items delivered quickly and safely right to your doorstep.</p>
     </div>
 
+    <div class="choose-card">
+      <img src="y.24support.webp" alt="24/7 Support">
+      <h4>24/7 WhatsApp Support</h4>
+      <p>Have questions? Our support team is available round the clock to assist you.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="y.secureshopping.webp" alt="Secure Shopping">
+      <h4>Secure Shopping</h4>
+      <p>We ensure your payment and personal data are safe with encrypted checkout.</p>
+    </div>
   </div>
+</section>
+
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Shop Prestige</h4>
+        <ul>
+          <li><a href="index.html">Shop All</a></li>
+          <li><a href="watches.html">Watches</a></li>
+          <li><a href="perfume.html">Perfumes</a></li>
+          <li><a href="bracelets.html">Bracelets</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="refund.html">Returns & Exchange Policy</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+     <!-- Social Links -->
+  <div class="social-links">
+    <a href="https://www.facebook.com/pakprestigecollective/" target="_blank">
+      <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 5.004 3.657 9.128 8.438 9.877v-6.987h-2.54V12h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.463h-1.261c-1.243 0-1.631.771-1.631 1.562V12h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 17.004 22 12z"/>
+      </svg>
+    </a>
+
+    <a href="https://www.instagram.com/pakprestigecollective/" target="_blank">
+      <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm4.5-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+      </svg>
+    </a>
+    <!-- TikTok -->
+<a href="https://www.tiktok.com/@pakprestigecollective" target="_blank" rel="noopener noreferrer">
+  <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+    <path d="M12.5 2c.3 1.9 1.5 3.5 3.2 4.3.8.4 1.6.6 2.4.6V9c-1.3 0-2.6-.3-3.8-.8v5.1c0 2.8-2.3 5-5.1 5s-5.1-2.3-5.1-5.1 2.3-5.1 5.1-5.1c.3 0 .7 0 1 .1v2.2c-.3-.1-.7-.1-1-.1-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9 2.9-1.3 2.9-2.9V2h1.4z"/>
+  </svg>
+</a>
+    <!-- Google Business -->
+<a href="https://share.google/6IOavFCNbXcRBpW0a" target="_blank" rel="noopener noreferrer">
+  <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+    <path d="M21.35 11.1h-9.9v2.7h6.1c-.3 1.6-1.9 4.7-6.1 4.7-3.7 0-6.8-3.1-6.8-6.8s3.1-6.8 6.8-6.8c2.1 0 3.4.9 4.2 1.7l1.9-1.9C15.7 3.4 13.7 2 10.9 2 6 2 2 6 2 10.9s4 8.9 8.9 8.9c5.1 0 8.4-3.6 8.4-8.6 0-.6 0-1-.1-1.5z"/>
+  </svg>
+</a>
+
+
+
+    <a href="https://x.com/PakPrestigeColl" target="_blank">
+      <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M24 4.557a9.94 9.94 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.864 9.864 0 01-3.127 1.196 4.917 4.917 0 00-8.384 4.482A13.94 13.94 0 011.671 3.149a4.917 4.917 0 001.523 6.573A4.902 4.902 0 01.964 9.1v.062a4.916 4.916 0 003.946 4.817 4.902 4.902 0 01-2.212.084 4.918 4.918 0 004.588 3.417A9.867 9.867 0 010 19.54a13.94 13.94 0 007.548 2.212c9.056 0 14.01-7.503 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0024 4.557z"/>
+      </svg>
+    </a>
+    <!-- YouTube -->
+<a href="https://www.youtube.com/@pakPrestigeCollective" target="_blank" rel="noopener noreferrer">
+  <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+    <path d="M10 15l5.19-3L10 9v6zm12-3c0 2.21-.18 3.52-.32 4.19-.29 1.29-1.27 2.27-2.56 2.56C18.45 19.9 12 19.9 12 19.9s-6.45 0-7.12-.15a3.996 3.996 0 01-2.56-2.56C2.18 15.52 2 14.21 2 12s.18-3.52.32-4.19c.29-1.29 1.27-2.27 2.56-2.56C5.55 5.1 12 5.1 12 5.1s6.45 0 7.12.15a3.996 3.996 0 012.56 2.56C21.82 8.48 22 9.79 22 12z"/>
+  </svg>
+</a>
+
+    <div class="footer-bottom">© 2025 Pak Prestige Collective</div>
+  </footer>
+
+  <!-- ===== Scripts ===== -->
+  <script src="script.js"></script>
+  <script>
+    // ==== Bracelets Data ====
+    const bracelets = [
+      {id:601,name:"Rodo Name Bracelets",price:1600,img1:"images/braclet1.webp",img2:"images/braclet1.1.webp"},
+      {id:602,name:"Leather  Name Bracelets",price:1400,img1:"images/braclet2.webp",img2:"images/braclet2.2.webp"},
+      {id:603,name:"Rolex Bracelets<BR>Engraved Name initials",price:2700,img1:"images/braclet3.webp",img2:"images/braclet3.3.webp"},
+      {id:604,name:"Adjustable Name Bracelet for Girls",price:1700,img1:"images/braclet4.webp",img2:"images/braclet4.4.webp"},
+      {id:605,name:"Custom Name Bracelets<BR>(silver,black,gold)",price:1600,img1:"images/braclet5.webp",img2:"images/braclet5.5.webp"},
+      {id:606,name:"Karha Customize Engraved",price:1200,img1:"images/braclet6.webp",img2:"images/braclet6.6.webp"},
+      {id:607,name:"Karha Customize Engraved<BR>( Bangle Cuff Bracelet)",price:1200,img1:"images/braclet7.webp",img2:"images/braclet7.7.webp"},
+      {id:608,name:"Double Color Chain Rolex braclet",price:2700,img1:"images/braclet8.webp",img2:"images/braclet8.8.webp"},
+      {id:609,name:"Adjustable cuff<BR>(Text Name)",price:1200,img1:"images/braclet9.webp",img2:"images/braclet9.9.webp"},
+      {id:610,name:"Rolex Bracelets<BR>(Black,Silver,Gold)",price:2700,img1:"images/braclet10.webp",img2:"images/braclet10.10.webp"}
+    ];
+
+    const grid=document.getElementById("braceletGrid");
+
+    bracelets.forEach(p=>{
+      const card=document.createElement("div");
+      card.className="product-card";
+      card.innerHTML=`
+        <img src="${p.img1}" alt="${p.name}" data-alt="${p.img2}">
+        <h3>${p.name}</h3>
+        <p class="price">₨${p.price}</p>
+        <div class="btn-row">
+          <button class="addCart">Add to Cart</button>
+          <button class="buyNow">Buy Now</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // ==== Auto Slider ====
+    setInterval(()=>{
+      document.querySelectorAll(".product-card img").forEach(img=>{
+        const current=img.src;
+        img.src=img.dataset.alt;
+        img.dataset.alt=current;
+      });
+    },2000);
+
+    // ==== Add to Cart ====
+    document.querySelectorAll(".addCart").forEach((btn,i)=>{
+      btn.addEventListener("click",()=>{
+        const product=bracelets[i];
+        let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
+        const existing=cart.find(item=>item.id===product.id);
+        if(existing) existing.qty++;
+        else cart.push({...product,qty:1});
+        localStorage.setItem("cartItems",JSON.stringify(cart));
+
+        const popup=document.createElement("div");
+        popup.className="popup";
+        popup.textContent=`${product.name} added to cart!`;
+        document.body.appendChild(popup);
+        setTimeout(()=>popup.style.right="20px",50);
+        setTimeout(()=>{popup.style.right="-350px";popup.remove();},2500);
+      });
+    });
+
+    // ==== Buy Now ====
+    document.querySelectorAll(".buyNow").forEach((btn,i)=>{
+      btn.addEventListener("click",()=>{
+        const product=bracelets[i];
+        localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
+        window.location.href="checkout.html";
+      });
+    });
+  </script>
 
   <script>
-    // Toggle Men / Ladies sections
-    function showCategory(category) {
-      document.getElementById("men").style.display = "none";
-      document.getElementById("ladies").style.display = "none";
-      document.getElementById(category).style.display = "block";
+    const searchInput=document.getElementById("searchBox");
+    const searchBtn=document.getElementById("searchBtn");
+    function handleSearch(){
+      const q=searchInput.value.trim();
+      if(q!==""){
+        localStorage.setItem("searchQuery",q);
+        window.location.href="search.html";
+      }
     }
+    searchBtn.addEventListener("click",handleSearch);
+    searchInput.addEventListener("keyup",e=>{if(e.key==="Enter")handleSearch();});
   </script>
-  <script src="assets/js/cart.js" defer></script>
-
+   <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/923241717459" 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Chat on WhatsApp">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+        alt="WhatsApp" 
+        class="whatsapp-icon">
+</a>
 </body>
 </html>
