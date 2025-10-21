@@ -29,30 +29,84 @@
   </main>
 
  <script>
-  let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-  const cartArea = document.getElementById("cart-area");
-  const checkoutBtn = document.getElementById("checkoutBtn");
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+const cartArea = document.getElementById("cart-area");
+const checkoutBtn = document.getElementById("checkoutBtn");
 
+function renderCart() {
   if (cartItems.length > 0) {
     let total = 0;
-    cartArea.innerHTML = cartItems.map(item => {
+    cartArea.innerHTML = cartItems.map((item, index) => {
       total += item.price * item.qty;
-      return `<p>${item.name} x${item.qty} - ₨${item.price * item.qty}</p>`;
+      return `
+        <p>
+          ${item.name} x${item.qty} - ₨${item.price * item.qty} 
+          <button class="remove-btn" data-index="${index}" style="margin-left:10px; cursor:pointer; color:red; border:none; background:none;">✖</button>
+        </p>
+      `;
     }).join("");
     cartArea.innerHTML += `<hr><strong>Total: ₨${total}</strong>`;
     checkoutBtn.style.display = "inline-block";
 
+    // Save updated total in localStorage for checkout page
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
     localStorage.setItem("cartTotal", total);
+
+    // Attach remove button event listeners
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const index = parseInt(btn.getAttribute("data-index"));
+        cartItems.splice(index, 1); // remove the product
+        renderCart(); // re-render cart
+      });
+    });
   } else {
     cartArea.innerHTML = "<p class='small'>Cart is empty. Add items from the shop.</p>";
     checkoutBtn.style.display = "none";
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem("cartTotal", 0);
   }
+}
+
+// Initial render
+renderCart();
 </script>
 
 
 
 
+ 
+<!-- ===== Why Choose Us Section ===== -->
+<section class="why-choose-us">
+  <h2>Why Shop With Us</h2>
+  <div class="choose-grid">
+    <div class="choose-card">
+      <img src="y.genuine.webp" alt="Genuine Products">
+      <h4>100% Genuine Products</h4>
+      <p>All our products are quality-checked and authentic, ensuring your complete satisfaction.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="y.fastdilivery.webp" alt="Fast Delivery">
+      <h4>Fast Home Delivery</h4>
+      <p>Get your favorite items delivered quickly and safely right to your doorstep.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="y.24support.webp" alt="24/7 Support">
+      <h4>24/7 WhatsApp Support</h4>
+      <p>Have questions? Our support team is available round the clock to assist you.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="y.secureshopping.webp" alt="Secure Shopping">
+      <h4>Secure Shopping</h4>
+      <p>We ensure your payment and personal data are safe with encrypted checkout.</p>
+    </div>
+  </div>
+</section>
+
+
 
 </body>
 </html>
-
