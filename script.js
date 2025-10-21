@@ -157,3 +157,217 @@ document.addEventListener("DOMContentLoaded", () => {
   const yEl = document.getElementById("year");
   if (yEl) yEl.textContent = new Date().getFullYear();
 });
+
+ // ===== Page-Local Product Search (works on all pages) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchBox");
+  const searchBtn = document.getElementById("searchBtn");
+
+  if (!searchInput || !searchBtn) return; // Skip if page has no search bar
+
+  function performSearch() {
+    const query = searchInput.value.toLowerCase().trim();
+    const products = document.querySelectorAll(".product-card, .card.product, .product");
+
+    products.forEach(product => {
+      const text = product.innerText.toLowerCase();
+      product.style.display = text.includes(query) || query === "" ? "block" : "none";
+    });
+
+    showNoResultsMessage();
+  }
+
+  function showNoResultsMessage() {
+    const products = document.querySelectorAll(".product-card, .card.product, .product");
+    const visible = Array.from(products).some(p => p.style.display !== "none");
+    let msg = document.getElementById("no-results");
+
+    if (!visible) {
+      if (!msg) {
+        msg = document.createElement("p");
+        msg.id = "no-results";
+        msg.textContent = "No matching products found.";
+        msg.style.textAlign = "center";
+        msg.style.color = "#444";
+        msg.style.marginTop = "20px";
+        document.querySelector(".product-grid, .product-sections, .container")?.appendChild(msg);
+      }
+    } else if (msg) {
+      msg.remove();
+    }
+  }
+
+  // Event listeners
+  searchBtn.addEventListener("click", performSearch);
+  searchInput.addEventListener("keyup", e => {
+    if (e.key === "Enter") performSearch();
+    if (searchInput.value === "") performSearch();
+  });
+});
+
+
+  // On click 🔍 button
+  searchBtn.addEventListener("click", performSearch);
+
+
+  
+
+  // On pressing Enter
+  searchInput.addEventListener("keyup", e => {
+    if (e.key === "Enter") performSearch();
+    if (searchInput.value === "") performSearch(); // Reset when cleared
+  });
+
+
+   function showNoResultsMessage() {
+    const visible = Array.from(document.querySelectorAll(".product, .card.product"))
+      .some(p => p.style.display !== "none");
+    let msg = document.getElementById("no-results");
+
+    if (!visible) {
+      if (!msg) {
+        msg = document.createElement("p");
+        msg.id = "no-results";
+        msg.textContent = "No matching products found.";
+        msg.style.textAlign = "center";
+        msg.style.color = "#444";
+        msg.style.marginTop = "20px";
+        document.querySelector(".product-sections, .container")?.appendChild(msg);
+      }
+    } else if (msg) {
+      msg.remove();
+    }
+  }
+  
+
+
+  
+
+  // Update search handler
+  function performSearch() {
+    const query = searchInput.value.toLowerCase().trim();
+    const products = document.querySelectorAll(".product, .card.product");
+
+    products.forEach(product => {
+      const text = product.innerText.toLowerCase();
+      product.style.display = text.includes(query) || query === "" ? "block" : "none";
+    });
+
+    showNoResultsMessage();
+  }
+  // ===== Simple On-Page Search (works on each page) =====
+const searchInput = document.getElementById("searchBox");
+const searchBtn = document.getElementById("searchBtn");
+
+if (searchInput && searchBtn) {
+  function performSearch() {
+    const query = searchInput.value.toLowerCase().trim();
+    const products = document.querySelectorAll(".product, .card.product");
+
+    products.forEach(product => {
+      const text = product.innerText.toLowerCase();
+      product.style.display = text.includes(query) || query === "" ? "block" : "none";
+    });
+
+    showNoResultsMessage();
+  }
+
+  function showNoResultsMessage() {
+    const visible = Array.from(document.querySelectorAll(".product, .card.product"))
+      .some(p => p.style.display !== "none");
+    let msg = document.getElementById("no-results");
+
+    if (!visible) {
+      if (!msg) {
+        msg = document.createElement("p");
+        msg.id = "no-results";
+        msg.textContent = "No matching products found.";
+        msg.style.textAlign = "center";
+        msg.style.color = "#444";
+        msg.style.marginTop = "20px";
+        document.querySelector(".product-sections, .container")?.appendChild(msg);
+      }
+    } else if (msg) {
+      msg.remove();
+    }
+  }
+
+  searchBtn.addEventListener("click", performSearch);
+  searchInput.addEventListener("keyup", e => {
+    if (e.key === "Enter") performSearch();
+    if (searchInput.value === "") performSearch();
+  });
+}
+
+
+
+// ===== Continuous Auto Slide for Top Collections (Final Version) =====
+const slider = document.getElementById("collectionsSlider");
+
+if (slider) {
+  // Duplicate content for smooth looping
+  const clone = slider.innerHTML;
+  slider.innerHTML += clone;
+
+  let scrollSpeed = 1; // Adjust speed (0.3 = slower, 1 = faster)
+
+  function scrollCollections() {
+    slider.scrollLeft += scrollSpeed;
+
+    // Reset to start when reaching half (because we duplicated content)
+    if (slider.scrollLeft >= slider.scrollWidth / 2) {
+      slider.scrollLeft = 0;
+    }
+
+    requestAnimationFrame(scrollCollections);
+  }
+
+  // Start animation
+  scrollCollections();
+
+  // Optional: pause on hover
+  slider.addEventListener("mouseenter", () => (scrollSpeed = 0));
+  slider.addEventListener("mouseleave", () => (scrollSpeed = 0.5));
+}
+
+
+
+
+// ===== Auto Slide Between Product Images =====
+document.querySelectorAll(".product-card").forEach(card => {
+  const imgs = card.querySelectorAll("img");
+  let current = 0;
+  setInterval(() => {
+    imgs[current].style.opacity = 0;
+    current = (current + 1) % imgs.length;
+    imgs[current].style.opacity = 1;
+  }, 2000);
+});
+
+
+
+
+// ===== Scroll Fade-In Animation for Sections =====
+const fadeElements = document.querySelectorAll('.section-block, .section-title');
+
+function handleScrollFade() {
+  const triggerBottom = window.innerHeight * 0.9;
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < triggerBottom) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScrollFade);
+window.addEventListener('load', handleScrollFade);
+
+
+
+
+
+
+
