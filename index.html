@@ -20,62 +20,655 @@
     <!-- Right: Cart -->
     <div class="header-right">
       <a href="cart.html" class="cart-link">
-        🛒 <span class="cart-text">Cart</span> 
+        🛒 <span class="cart-text">Check</span> 
         <span class="cart-count">0</span>
       </a>
     </div>
   </div>
 </header>
-<!-- Navigation Bar -->
-<nav class="sub-header">
-  <ul>
-    <li><a href="watches.html">Watches</a></li>
-    <li><a href="fragrances.html">Fragrances</a></li>
-    <li><a href="bracelets.html">Custom Bracelets</a></li>
-  </ul>
-</nav>
+
+
+<!-- ===== Navigation Bar ===== -->
+<header class="site-header">
+  <div class="nav-container">
+    
+    <!-- Left: Search Bar -->
+    <div class="nav-left">
+      <input type="text" id="searchBox" placeholder="Search products...">
+      <button id="searchBtn">🔍</button>
+    </div>
+
+    <!-- Center: Main Nav Links -->
+    <nav class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <!-- Catalogue Dropdown -->
+        <li class="dropdown">
+          <a href="#">Catalogue ▾</a>
+          <div class="dropdown-content catalogue">
+            <a href="shoes.html">Shoes</a>
+            <a href="watches.html">Watches</a>
+            <a href="fragrance.html">Fragrance</a>
+            <a href="custom-jewelry.html">Customized Jewelry</a>
+            <a href="bangles.html">Bangles</a>
+            <a href="bracelets.html">Bracelets</a>
+            <a href="necklaces.html">Necklaces</a>
+            <a href="cufflinks.html">Cufflinks</a>
+            <a href="lockets.html">Lockets</a>
+            <a href="neon-items.html">Neon Items</a>
+            <a href="islamic-custom.html">Islamic Customized Items</a>
+            <a href="gift-items.html">Gift Items</a>
+          </div>
+        </li>
+
+        <!-- Deals Page -->
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: Hamburger Menu -->
+    <div class="nav-right dropdown">
+      <button class="menu-btn">☰</button>
+      <div class="dropdown-content more-menu">
+        <a href="blogs.html">Blogs & Articles</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </div>
+  </div>
+</header>
+
   
 
  
 
 </script>
-<main class="container">
-  <h2>All Products Collection</h2>
 
-  <div class="grid">
-    <!-- Product 1 -->
-   <div class="card product">
-  <img src="watch.jpg" alt="Prestige Silver Watch">
-  <h3>Prestige Silver Watch</h3>
-  <p class="small">Watches — Elegant silver stainless steel, water resistant.</p>
-  <div class="row">
-    <div class="price">Rs. 12,999</div>
-    <button class="btn add-to-cart" data-id="1" data-name="Prestige Silver Watch" data-price="12999">Add to Cart</button>
-  </div>
-</div>
 
-    <!-- Product 2 -->
-    <div class="card product">
-  <img src="bracelet.jpg" alt="Luxe Bracelet">
-  <h3>Luxe Bracelet</h3>
-  <p class="small">Bracelet — Hand-finished premium bracelet.</p>
-  <div class="row">
-    <div class="price">Rs. 4,950</div>
-    <button class="btn add-to-cart" data-id="2" data-name="Luxe Bracelet" data-price="4950">Add to Cart</button>
+<!-- ===== Top Collections Section ===== -->
+<section class="top-collections">
+  <h2>Top Collections</h2>
+  <div class="collections-slider" id="collectionsSlider">
+    <div class="collection-card" onclick="location.href='shoes.html'">
+      <img src="y.shoes.webp" alt="Shoes">
+      <p>Shoes</p>
+    </div>
+    <div class="collection-card" onclick="location.href='watches.html'">
+      <img src="y.watches.webp" alt="Watches">
+      <p>Watches</p>
+    </div>
+    <div class="collection-card" onclick="location.href='fragrance.html'">
+      <img src="y.perfumes.webp" alt="Fragrance">
+      <p>Fragrance</p>
+    </div>
+    <div class="collection-card" onclick="location.href='custom-jewelry.html'">
+      <img src="y.jewelry.webp" alt="Customized Jewelry">
+      <p>Customized Jewelry</p>
+    </div>
+    <div class="collection-card" onclick="location.href='bangles.html'">
+      <img src="y.bangels.webp" alt="Bangles">
+      <p>Bangles</p>
+    </div>
+    <div class="collection-card" onclick="location.href='bracelets.html'">
+      <img src="y.bracelet.webp" alt="Bracelets">
+      <p>Bracelets</p>
+    </div>
+    <div class="collection-card" onclick="location.href='necklaces.html'">
+      <img src="y.necklace.webp" alt="Necklaces">
+      <p>Necklaces</p>
+    </div>
+    <div class="collection-card" onclick="location.href='cufflinks.html'">
+      <img src="y.kuflinks.webp" alt="Cufflinks">
+      <p>Cufflinks</p>
+    </div>
+    <div class="collection-card" onclick="location.href='lockets.html'">
+      <img src="y.lockets.webp" alt="Lockets">
+      <p>Lockets</p>
+    </div>
+    <div class="collection-card" onclick="location.href='neon-items.html'">
+      <img src="y.neon.webp" alt="Neon Items">
+      <p>Neon Items</p>
+    </div>
+    <div class="collection-card" onclick="location.href='gift-items.html'">
+      <img src="y.gift.webp" alt="Gift Items">
+      <p>Gift Items</p>
+    </div>
+    <div class="collection-card" onclick="location.href='islamic-custom.html'">
+      <img src="y.islamic.webp" alt="Islamic Items">
+      <p>Islamic Items</p>
+    </div>
   </div>
-</div>
+</section>
 
-    <!-- Product 3 -->
-    <div class="card product">
-  <img src="perfume.jpg" alt="Aurum Perfume">
-  <h3>Aurum Perfume</h3>
-  <p class="small">Perfume — Signature long-lasting refined notes.</p>
-  <div class="row">
-    <div class="price">Rs. 7,900</div>
-    <button class="btn add-to-cart" data-id="3" data-name="Aurum Perfume" data-price="7900">Add to Cart</button>
+
+
+<!-- ===== Gift Items Section ===== -->
+<section class="collection-container">
+    <center>
+ <h6 class="section-title"><bold>✨ Top Selling Gift products</bold> </h6></center>
+
+  <div class="product-grid" id="giftGrid"></div>
+  <div style="text-align:center; margin-top:20px;">
+    <a href="gift-items.html">
+      <button style="padding:10px 20px; font-weight:600; border:none; border-radius:6px; background:#333; color:#fff; cursor:pointer; transition:0.3s;">
+        See More
+      </button>
+    </a>
   </div>
-</div>
-</main>
+</section>
+
+<script>
+  // ===== Gift Items Data =====
+  const giftItems = [
+    {id:301, name:"Headset(wireless,stereo)<br> Model Air31", price:1500, img1:"images/gift1.webp", img2:"images/gift1.1.webp"},
+    {id:302, name:"Black Aura Watch", price:1500, img1:"images/gift2.webp", img2:"images/gift2.2.webp"},
+    {id:303, name:"Rado Bracelet", price:1600, img1:"images/gift3.webp", img2:"images/gift3.3.webp"},
+    {id:304, name:"Couple Heart Necklace", price:1400, img1:"images/gift4.webp", img2:"images/gift4.4.webp"},
+    {id:305, name:"NIKE sneakers(Black&gray color)", price:2800, img1:"images/gift5.webp", img2:"images/gift5.5.webp"},
+    {id:306, name:"perfume Survivor(Classy more than a fragrance 50ml)", price:3100, img1:"images/gift6.webp", img2:"images/gift6.6.webp"},
+    {id:307, name:"3D LIGHT Lamp(Option with your NAMES , ANNIVERSARY DATE,more.)", price:1900, img1:"images/gift7.webp", img2:"images/gift7.7.webp"},
+    {id:308, name:"Square shape Customize 3D LED LIGHT LAMP", price:1700, img1:"images/gift8.webp", img2:"images/gift8.8.webp"},
+    {id:309, name:"Gift Hamper", price:2200, img1:"images/gift9.webp", img2:"images/gift9.9.webp"},
+    {id:310, name:"Luxury Scented Candle", price:1500, img1:"images/gift10.webp", img2:"images/gift10.10.webp"}
+  ];
+
+  const giftGrid = document.getElementById("giftGrid");
+
+  // ===== Display first 8 products =====
+  giftItems.slice(0, 8).forEach(product => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <div class="img-container">
+        <img src="${product.img1}" alt="${product.name}" data-alt="${product.img2}">
+      </div>
+      <h3>${product.name}</h3>
+      <p class="price">₨${product.price}</p>
+      <div class="btn-row">
+        <button class="addCart">Add to Cart</button>
+        <button class="buyNow">Buy Now</button>
+      </div>
+    `;
+    giftGrid.appendChild(card);
+  });
+
+  // ===== Image Auto Slider for gift items =====
+  setInterval(() => {
+    document.querySelectorAll("#giftGrid .product-card img").forEach(img => {
+      [img.src, img.dataset.alt] = [img.dataset.alt, img.src];
+    });
+  }, 2000);
+
+  // ===== Add to Cart Logic =====
+  document.querySelectorAll("#giftGrid .addCart").forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      const product = giftItems[i];
+      let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const existing = cart.find(item => item.id === product.id);
+      if(existing) existing.qty++;
+      else cart.push({...product, qty:1});
+      localStorage.setItem("cartItems", JSON.stringify(cart));
+
+      const popup = document.createElement("div");
+      popup.className = "popup";
+      popup.textContent = `${product.name} added to cart!`;
+      document.body.appendChild(popup);
+      setTimeout(() => popup.style.right="20px", 50);
+      setTimeout(() => { popup.style.right="-350px"; popup.remove(); }, 2500);
+    });
+  });
+
+  // ===== Buy Now Logic =====
+  document.querySelectorAll("#giftGrid .buyNow").forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      const product = giftItems[i];
+      localStorage.setItem("cartItems", JSON.stringify([{...product, qty:1}]));
+      window.location.href = "checkout.html";
+    });
+  });
+</script>
+
+
+
+
+
+<!-- ===== Featured Customized Jewelry Section ===== -->
+<section class="section-block featured-jewelry">
+  <h2 class="section-title">✨ Featured Customized Jewelry</h2>
+
+  <div class="product-grid" id="featuredJewelryGrid"></div>
+
+  <div class="view-all">
+    <a href="custom-jewelry.html" class="btn">See More →</a>
+  </div>
+</section>
+
+<script>
+// ==== Jewelry Data (Make sure it matches your current CustomizeBracelet.html) ====
+const jewelry = [
+  {id:401,name:"Customize Name Pendant",price:1500,img1:"images/jewlery1.webp",img2:"images/jewlery1.1.webp"},
+  {id:402,name:"Customize Name Bangles",price:1500,img1:"images/jewlery2.webp",img2:"images/jewlery2.2.webp"},
+  {id:403,name:"Custom Name Ring (For Girls)",price:600,img1:"images/jewlery3.webp",img2:"images/jewlery3.3.webp"},
+  {id:404,name:"Personalized Customize Name Earrings",price:1200,img1:"images/jewlery4.webp",img2:"images/jewlery4.4.webp"},
+  {id:405,name:"Name Initial Ingraved Cufflinks",price:1600,img1:"images/jewlery5.webp",img2:"images/jewlery5.5.webp"},
+  {id:406,name:"Customize Heart Necklace",price:1700,img1:"images/jewlery6.webp",img2:"images/jewlery6.6.webp"},
+  {id:407,name:"Customize Name Cufflinks",price:3300,img1:"images/jewlery7.webp",img2:"images/jewlery7.7.webp"},
+  {id:408,name:"Custom Name Ring (For Boys)",price:600,img1:"images/jewlery8.webp",img2:"images/jewlery8.8.webp"}
+];
+
+const featuredJewelry = jewelry.slice(0,6); // first 6 items
+const featuredGrid = document.getElementById("featuredJewelryGrid");
+
+featuredJewelry.forEach(p=>{
+  const card = document.createElement("div");
+  card.className = "product-card";
+  card.innerHTML = `
+    <div class="card-images">
+      <img src="${p.img1}" alt="${p.name}" data-alt="${p.img2}">
+    </div>
+    <h3>${p.name}</h3>
+    <p class="price">₨${p.price}</p>
+    <div class="btn-row">
+      <button class="addCart">Add to Cart</button>
+      <button class="buyNow">Buy Now</button>
+    </div>
+  `;
+  featuredGrid.appendChild(card);
+});
+
+// ==== Auto Image Slider with Fade ====
+setInterval(()=>{
+  document.querySelectorAll("#featuredJewelryGrid .product-card img").forEach(img=>{
+    const current = img.src;
+    img.src = img.dataset.alt;
+    img.dataset.alt = current;
+    img.style.opacity = 0;
+    setTimeout(()=>{img.style.opacity = 1;},50);
+  });
+},2000);
+
+// ==== Add to Cart ====
+document.querySelectorAll("#featuredJewelryGrid .addCart").forEach((btn,i)=>{
+  btn.addEventListener("click",()=>{
+    const product = featuredJewelry[i];
+    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const existing = cart.find(item=>item.id===product.id);
+    if(existing) existing.qty++;
+    else cart.push({...product,qty:1});
+    localStorage.setItem("cartItems",JSON.stringify(cart));
+
+    const popup=document.createElement("div");
+    popup.className="popup";
+    popup.textContent=`${product.name} added to cart!`;
+    document.body.appendChild(popup);
+    setTimeout(()=>popup.style.right="20px",50);
+    setTimeout(()=>{popup.style.right="-350px";popup.remove();},2500);
+  });
+});
+
+// ==== Buy Now ====
+document.querySelectorAll("#featuredJewelryGrid .buyNow").forEach((btn,i)=>{
+  btn.addEventListener("click",()=>{
+    const product = featuredJewelry[i];
+    localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
+    window.location.href="checkout.html";
+  });
+});
+</script>
+
+<style>
+/* ===== Featured Jewelry Layout ===== */
+.featured-jewelry { padding: 40px 0; text-align: center; }
+.featured-jewelry .section-title { font-size: 1.8rem; margin-bottom: 25px; text-transform: uppercase; }
+
+#featuredJewelryGrid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  justify-items: center;
+  margin-bottom: 25px;
+}
+@media(max-width:1024px){ #featuredJewelryGrid{grid-template-columns: repeat(2,1fr);} }
+@media(max-width:768px){ #featuredJewelryGrid{grid-template-columns: repeat(2,1fr);} }
+
+#featuredJewelryGrid .product-card { 
+  background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1); 
+  padding:15px; text-align:center; width:100%; max-width:260px; transition:transform .3s ease; 
+}
+#featuredJewelryGrid .product-card:hover { transform:translateY(-5px); }
+
+#featuredJewelryGrid .card-images { position:relative; width:100%; height:220px; overflow:hidden; }
+#featuredJewelryGrid .card-images img { 
+  width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; 
+  transition:opacity .5s ease; opacity:1; 
+}
+
+.btn-row { display:flex; gap:8px; justify-content:center; margin-top:10px; }
+.btn-row button { flex:1; padding:8px; border:none; border-radius:6px; font-weight:600; cursor:pointer; color:#fff; background:#c0c0c0; transition:background .3s; }
+.btn-row button:hover { background:#333; }
+
+.view-all { margin-top:20px; }
+.view-all .btn { background:#222; color:#fff; padding:10px 20px; border-radius:5px; text-decoration:none; transition:background .3s; }
+.view-all .btn:hover { background:#000; }
+</style>
+
+
+
+
+
+
+<!-- ===== Featured Bracelets Section ===== -->
+<section class="collection-container">
+    <center>
+ <h6 class="section-title">✨ Featured Customized Bracelets</h6></center>
+  <div class="product-grid" id="featuredBraceletGrid"></div>
+  <div style="margin-top:20px;">
+   <a href="bracelets.html">
+     <center> <button style="padding:10px 20px; font-weight:600; border:none; border-radius:6px; background:#333; color:#fff; cursor:pointer; transition:0.3s;">
+        See More
+      </button></center>
+    </a>
+  </div>
+</section>
+
+<script>
+  // ==== Featured Bracelets Data (first 4 products) ====
+  const featuredBracelets = [
+    {id:601,name:"Rodo Name Bracelets",price:1600,img1:"images/braclet1.webp",img2:"images/braclet1.1.webp"},
+    {id:602,name:"Leather Name Bracelets",price:1400,img1:"images/braclet2.webp",img2:"images/braclet2.2.webp"},
+    {id:603,name:"Rolex Bracelets<BR>engraved Name initials",price:2700,img1:"images/braclet3.webp",img2:"images/braclet3.3.webp"},
+    {id:604,name:"Adjustable Name Bracelet for Girls",price:1700,img1:"images/braclet4.webp",img2:"images/braclet4.4.webp"}
+  ];
+
+  const grid = document.getElementById("featuredBraceletGrid");
+
+  featuredBracelets.forEach((p, i) => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <img src="${p.img1}" alt="${p.name}" data-alt="${p.img2}">
+      <h3>${p.name}</h3>
+      <p class="price">₨${p.price}</p>
+      <div class="btn-row">
+        <button class="addCart">Add to Cart</button>
+        <button class="buyNow">Buy Now</button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // ==== Auto Image Slider every 2 seconds ====
+  setInterval(() => {
+    grid.querySelectorAll("img").forEach(img => {
+      const current = img.src;
+      img.src = img.dataset.alt;
+      img.dataset.alt = current;
+    });
+  }, 2000);
+
+  // ==== Add to Cart ====
+  grid.querySelectorAll(".addCart").forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      const product = featuredBracelets[i];
+      let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) existing.qty++;
+      else cart.push({...product, qty:1});
+      localStorage.setItem("cartItems", JSON.stringify(cart));
+
+      const popup = document.createElement("div");
+      popup.className = "popup";
+      popup.textContent = `${product.name} added to cart!`;
+      document.body.appendChild(popup);
+      setTimeout(() => popup.style.right="20px", 50);
+      setTimeout(() => { popup.style.right="-350px"; popup.remove(); }, 2500);
+    });
+  });
+
+  // ==== Buy Now ====
+  grid.querySelectorAll(".buyNow").forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      const product = featuredBracelets[i];
+      localStorage.setItem("cartItems", JSON.stringify([{...product, qty:1}]));
+      window.location.href = "checkout.html";
+    });
+  });
+</script>
+
+
+
+
+
+<!-- ===== Deals Section on Index Page ===== -->
+<section class="collection-container">
+  <center><h6 class="section-title">✨ Exclusive Deals</h6></center>
+  <div class="product-grid" id="indexDealGrid"></div>
+  <div style="margin-top:20px;">
+    <a href="deals.html">
+      <center>
+        <button style="padding:10px 20px; font-weight:600; border:none; border-radius:6px; background:#333; color:#fff; cursor:pointer; transition:0.3s;">
+          See More
+        </button>
+      </center>
+    </a>
+  </div>
+</section>
+
+<script>
+  // ==== Deals Data (first 8 products) ====
+  const indexDeals = [
+    {id:201,name:"Islamic Car hang",price:1450,img1:"images/deal1.webp",img2:"images/deal1.1.webp"},
+    {id:202,name:"Customize name Temperature Water Bottle",price:1800,img1:"images/deal2.webp",img2:"images/deal2.2.webp"},
+    {id:203,name:"China Imported Black Name Stylus Pen +Keychain",price:1250,img1:"images/deal3.webp",img2:"images/deal3.3.webp"},
+    {id:204,name:"Wallet + Keychain",price:1950,img1:"images/deal4.webp",img2:"images/deal4.4.webp"},
+    {id:205,name:"Multi Color Light Name Stylus Pen",price:950,img1:"images/deal5.webp",img2:"images/deal5.5.webp"},
+    {id:206,name:"Square shape Customize 3D LED LIGHT LAMP",price:1550,img1:"images/deal6.webp",img2:"images/deal6.6.webp"},
+    {id:207,name:"Long Wallet",price:1600,img1:"images/deal7.webp",img2:"images/deal7.7.webp"},
+    {id:208,name:"Custom Infinity Necklace",price:1700,img1:"images/deal8.webp",img2:"images/deal8.8.webp"}
+  ];
+
+  const dealGrid = document.getElementById("indexDealGrid");
+
+  // ==== Generate Product Cards ====
+  indexDeals.forEach((p,i)=>{
+    const card=document.createElement("div");
+    card.className="product-card";
+    card.innerHTML=`
+      <img src="${p.img1}" alt="${p.name}" data-alt="${p.img2}">
+      <h3>${p.name}</h3>
+      <p class="price">₨${p.price}</p>
+      <div class="btn-row">
+        <button class="addCart">Add to Cart</button>
+        <button class="buyNow">Buy Now</button>
+      </div>
+    `;
+    dealGrid.appendChild(card);
+  });
+
+  // ==== Auto Image Slider every 2 seconds ====
+  setInterval(()=>{
+    dealGrid.querySelectorAll("img").forEach(img=>{
+      const current=img.src;
+      img.src=img.dataset.alt;
+      img.dataset.alt=current;
+    });
+  },2000);
+
+  // ==== Add to Cart ====
+  dealGrid.querySelectorAll(".addCart").forEach((btn,i)=>{
+    btn.addEventListener("click",()=>{
+      const product=indexDeals[i];
+      let cart=JSON.parse(localStorage.getItem("cartItems"))||[];
+      const existing=cart.find(item=>item.id===product.id);
+      if(existing) existing.qty++;
+      else cart.push({...product,qty:1});
+      localStorage.setItem("cartItems",JSON.stringify(cart));
+
+      const popup=document.createElement("div");
+      popup.className="popup";
+      popup.textContent=`${product.name} added to cart!`;
+      document.body.appendChild(popup);
+      setTimeout(()=>popup.style.right="20px",50);
+      setTimeout(()=>{popup.style.right="-350px";popup.remove();},2500);
+    });
+  });
+
+  // ==== Buy Now ====
+  dealGrid.querySelectorAll(".buyNow").forEach((btn,i)=>{
+    btn.addEventListener("click",()=>{
+      const product=indexDeals[i];
+      localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
+      window.location.href="checkout.html";
+    });
+  });
+</script>
+
+
+<!-- ===== Neon Items Preview Section ===== -->
+<section class="collection-container">
+ <center><h6 class="section-title">✨ Neon Items Collection</h6></center>
+  <div class="product-grid" id="neonPreviewGrid"></div>
+   <div style="margin-top:20px;">
+   <a href="neon-items.html">
+     <center> <button style="padding:10px 20px; font-weight:600; border:none; border-radius:6px; background:#333; color:#fff; cursor:pointer; transition:0.3s;">
+        See More
+      </button></center>
+    </a>
+  </div>
+  
+</section>
+
+<script>
+  // ==== Neon Items Data (Same as neon.html) ====
+  const neonItems = [
+    {id:1001,name:"Custom Neon Name Sign",price:3500,img1:"images/neon1.webp",img2:"images/neon1.1.webp"},
+    {id:1002,name:"Neon Light Design",price:3200,img1:"images/neon2.webp",img2:"images/neon2.2.webp"},
+    {id:1003,name:"Blue Love Sign",price:4500,img1:"images/neon3.webp",img2:"images/neon3.3.webp"},
+    {id:1004,name:"Gift Lamp Neon Light",price:2700,img1:"images/neon4.webp",img2:"images/neon4.4.webp"},
+    {id:1005,name:"Angel Wing Neon Art",price:3900,img1:"images/neon5.webp",img2:"images/neon5.5.webp"},
+    {id:1006,name:"Custom Wall Neon",price:5200,img1:"images/neon6.webp",img2:"images/neon6.6.webp"},
+    {id:1007,name:"Blue Moon Neon Lamp",price:2700,img1:"images/neon7.webp",img2:"images/neon7.7.webp"},
+    {id:1008,name:"Gaming Zone Neon Sign",price:4200,img1:"images/neon8.webp",img2:"images/neon8.8.webp"},
+    {id:1009,name:"Coffee Shop Neon Light",price:3600,img1:"images/neon9.webp",img2:"images/neon9.9.webp"},
+    {id:1010,name:"Happy Birthday Neon",price:4700,img1:"images/neon10.webp",img2:"images/neon10.10.webp"}
+  ];
+
+  const neonPreviewGrid = document.getElementById("neonPreviewGrid");
+
+  // ==== Show only first 4 items ====
+  neonItems.slice(0,4).forEach((p, i)=>{
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <img src="${p.img1}" alt="${p.name}" data-alt="${p.img2}">
+      <h3>${p.name}</h3>
+      <p class="price">₨${p.price}</p>
+      <div class="btn-row">
+        <button class="addCart">Add to Cart</button>
+        <button class="buyNow">Buy Now</button>
+      </div>
+    `;
+    neonPreviewGrid.appendChild(card);
+  });
+
+  // ==== Auto Image Swap Every 2 Seconds ====
+  setInterval(()=>{
+    document.querySelectorAll("#neonPreviewGrid .product-card img").forEach(img=>{
+      const current = img.src;
+      img.src = img.dataset.alt;
+      img.dataset.alt = current;
+    });
+  }, 2000);
+
+  // ==== Add to Cart Functionality ====
+  document.querySelectorAll("#neonPreviewGrid .addCart").forEach((btn,i)=>{
+    btn.addEventListener("click",()=>{
+      const product = neonItems[i];
+      let cart = JSON.parse(localStorage.getItem("cartItems"))||[];
+      const existing = cart.find(item=>item.id===product.id);
+      if(existing) existing.qty++;
+      else cart.push({...product,qty:1});
+      localStorage.setItem("cartItems",JSON.stringify(cart));
+
+      // Popup notification
+      const popup=document.createElement("div");
+      popup.className="popup";
+      popup.textContent=`${product.name} added to cart!`;
+      document.body.appendChild(popup);
+      setTimeout(()=>popup.style.right="20px",50);
+      setTimeout(()=>{popup.style.right="-350px"; popup.remove();},2500);
+    });
+  });
+
+  // ==== Buy Now Functionality ====
+  document.querySelectorAll("#neonPreviewGrid .buyNow").forEach((btn,i)=>{
+    btn.addEventListener("click",()=>{
+      const product = neonItems[i];
+      localStorage.setItem("cartItems",JSON.stringify([{...product,qty:1}]));
+      window.location.href="checkout.html";
+    });
+  });
+
+  
+</script>
+
+
+
+
+
+<!-- ===== All Collections Button Section ===== -->
+<section class="all-collections-button">
+  <button onclick="location.href='all-collections.html'">Explore All Product Collections →</button>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ===== Why Choose Us Section ===== -->
+<section class="why-choose-us">
+  <h2>Why Shop With Us</h2>
+  <div class="choose-grid">
+    <div class="choose-card">
+      <img src="y.genuine.webp" alt="Genuine Products">
+      <h4>100% Genuine Products</h4>
+      <p>All our products are quality-checked and authentic, ensuring your complete satisfaction.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="y.fastdilivery.webp" alt="Fast Delivery">
+      <h4>Fast Home Delivery</h4>
+      <p>Get your favorite items delivered quickly and safely right to your doorstep.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="y.24support.webp" alt="24/7 Support">
+      <h4>24/7 WhatsApp Support</h4>
+      <p>Have questions? Our support team is available round the clock to assist you.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="y.secureshopping.webp" alt="Secure Shopping">
+      <h4>Secure Shopping</h4>
+      <p>We ensure your payment and personal data are safe with encrypted checkout.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
 
   <!-- Footer -->
 <footer class="site-footer">
@@ -87,11 +680,11 @@
     <div class="footer-col">
       <h4>Shop Prestige</h4>
       <ul>
-        <li><a href="#">Shop All</a></li>
-        <li><a href="#">Watches</a></li>
-        <li><a href="#">Perfumes</a></li>
-        <li><a href="#">Custom Bracelets</a></li>
-        <li><a href="#">Gift Sets</a></li>
+        <li><a href="index.html">Shop All</a></li>
+        <li><a href="watches.html">Watches</a></li>
+        <li><a href="fragrance.html">Perfumes</a></li>
+        <li><a href="bangles.html">Custom Bracelets</a></li>
+        <li><a href="gift-items.html">Gift Sets</a></li>
       </ul>
     </div>
 
@@ -99,12 +692,12 @@
     <div class="footer-col">
       <h4>Customer Care</h4>
       <ul>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Returns & Exchange Policy</a></li>
-        <li><a href="#">Warranty Information</a></li>
-        <li><a href="#">Shipping Policy</a></li>
-        <li><a href="#">Modes of Payment</a></li>
+        <li><a href="contact.html">FAQs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="terms.html">Returns & Exchange Policy</a></li>
+        <li><a href="terms.html">Warranty Information</a></li>
+        <li><a href="terms.html">Shipping Policy</a></li>
+        <li><a href="terms.html">Modes of Payment</a></li>
       </ul>
     </div>
 
@@ -112,10 +705,10 @@
     <div class="footer-col">
       <h4>About Us</h4>
       <ul>
-        <li><a href="#">Our Story</a></li>
-        <li><a href="#">Store Locator</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="terms.html">Store Locator</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
       </ul>
     </div>
 
@@ -164,7 +757,7 @@
   </div>
 
   <!-- Bottom text -->
-  <p class="footer-bottom">© <span id="year"></span> Prestige Collective • Silver & White Collection</p>
+  <p class="footer-bottom">© <span id="year"></span> Pak Prestige Collective • All rights reserved.</p>
 </footer>
 
 
@@ -223,9 +816,48 @@
 </script>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("collectionsSlider");
+  if (!slider) return;
+
+  let scrollDirection = 1; // 1 = move right, -1 = move left
+
+  function autoScroll() {
+    const scrollAmount = 200; // adjust if needed
+    slider.scrollBy({
+      left: scrollAmount * scrollDirection,
+      behavior: "smooth"
+    });
+
+    // Reverse direction when hitting edges
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5) {
+      scrollDirection = -1;
+    } else if (slider.scrollLeft <= 0) {
+      scrollDirection = 1;
+    }
+  }
+
+  // Start auto-scroll every 2 seconds
+  let scrollInterval = setInterval(autoScroll, 2600);
+
+  // Pause when hovered
+  slider.addEventListener("mouseenter", () => clearInterval(scrollInterval));
+  slider.addEventListener("mouseleave", () => {
+    scrollInterval = setInterval(autoScroll, 2700);
+  });
+});
+</script>
+
+
+
+
+
+
+
+
 </body>
 </html>
-
 
 
 
